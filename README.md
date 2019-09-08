@@ -1,2 +1,2 @@
-# Studump 
-An Android Client for the Studump API 
+# Mirumon
+An Android Client for the Mirumon API 
