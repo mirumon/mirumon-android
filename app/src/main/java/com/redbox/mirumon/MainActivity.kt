@@ -1,4 +1,4 @@
-package com.redbox.studump
+package com.redbox.mirumon
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

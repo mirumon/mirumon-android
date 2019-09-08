@@ -1,4 +1,4 @@
-package com.redbox.studump
+package com.redbox.mirumon
 
 import org.junit.Test
 
