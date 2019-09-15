@@ -22,10 +22,9 @@ before_script:
   - echo -e "\n504667f4c0de7af1a06de9f4b1727b84351f2910" > $ANDROID_HOME/licenses/android-sdk-preview-license
 
 script:
-  - "./gradlew clean build check createDebugUnitTestCoverageReport"
-  - mv app/build/reports/jacoco/createDebugUnitTestCoverageReport app/build/reports/jacoco/jacocoTestDebugUnitTestReport
-  - mv app/build/reports/jacoco/jacocoTestDebugUnitTestReport/createDebugUnitTestCoverageReport.xml
-    app/build/reports/jacoco/jacocoTestDebugUnitTestReport/jacocoTestDebugUnitTestReport.xml
+  - ./gradlew clean build check createDebugUnitTestCoverageReport --no-daemon --stacktrace
+
+after_success:
   - bash <(curl -s https://codecov.io/bash)
 
 before_cache:
