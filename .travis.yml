@@ -48,7 +48,7 @@ deploy:
   on:
     tags: true
     repo: mirumon/mirumon-android
-    branch: master
+    # branch: master
 
 notifications:
   email: false
