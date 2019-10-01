@@ -1,6 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/colorPrimary"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
 
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/device_indicator_iv"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/offline_indicator" />
+
+    <ImageView
+        android:id="@+id/device_icon_iv"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintLeft_toRightOf="@id/device_indicator_iv"
+        app:srcCompat="@drawable/device"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/dev_n_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="name"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintLeft_toRightOf="@id/device_icon_iv"
+        app:layout_constraintTop_toTopOf="@id/device_icon_iv" />
+
+    <TextView
+        android:id="@+id/dev_u_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="user"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintLeft_toLeftOf="@id/dev_n_tv"
+        app:layout_constraintTop_toBottomOf="@id/dev_n_tv" />
+
+    <TextView
+        android:id="@+id/dev_d_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="domain"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintLeft_toLeftOf="@id/dev_u_tv"
+        app:layout_constraintTop_toBottomOf="@id/dev_u_tv" />
+
+    <TextView
+        android:id="@+id/delimeter_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delimeter"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintTop_toTopOf="@id/dev_n_tv"
+        app:layout_constraintLeft_toLeftOf="@id/delimeter_tv3"/>
+
+    <TextView
+        android:id="@+id/delimeter_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delimeter"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintTop_toTopOf="@id/dev_u_tv"
+        app:layout_constraintLeft_toLeftOf="@id/delimeter_tv3"/>
+    <TextView
+        android:id="@+id/delimeter_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delimeter"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintTop_toTopOf="@id/dev_d_tv"
+        app:layout_constraintLeft_toRightOf="@id/dev_d_tv"/>
+
+    <TextView
+        android:id="@+id/device_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lato_bold"
+        android:text="red-desktop"
+        android:layout_marginStart="15dp"
+        android:textColor="@color/colorAccentFont"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/delimeter_tv1"
+        app:layout_constraintLeft_toRightOf="@id/delimeter_tv1" />
+
+    <TextView
+        android:id="@+id/device_user_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aredruss"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintTop_toBottomOf="@id/device_name_tv"
+        app:layout_constraintLeft_toLeftOf="@id/device_name_tv" />
+
+    <TextView
+        android:id="@+id/device_domain_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ippo.mirea.ru"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/colorMainFont"
+        app:layout_constraintTop_toBottomOf="@id/device_user_tv"
+        app:layout_constraintLeft_toLeftOf="@id/device_user_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
