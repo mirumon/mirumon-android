@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MainActivity">
+    tools:context=".main.MainActivity">
 
     <Toolbar
         android:id="@+id/toolbar"
@@ -53,7 +53,7 @@
 
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/main_tl"
+        android:id="@+id/main_tabs_tl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
@@ -74,5 +74,18 @@
             android:text="@string/devices_tab_text" />
 
     </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_fragments_vp"
+        android:name="com.redbox.mirumon.GroupListFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_tabs_tl">
+
+
+    </androidx.viewpager.widget.ViewPager>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
