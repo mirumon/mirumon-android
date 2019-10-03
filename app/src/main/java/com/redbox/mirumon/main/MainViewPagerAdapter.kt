@@ -11,7 +11,6 @@ class MainViewPagerAdapter(fm: FragmentManager, val tabCount: Int = 2) :
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            0 -> GroupListFragment()
             1 -> DeviceListFragment()
             else -> GroupListFragment()
         }

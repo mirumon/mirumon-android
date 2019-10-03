@@ -1,0 +1,54 @@
+language: android
+jdk: oraclejdk8
+sudo: required
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - tools
+    - build-tools-28.0.3
+    - android-28
+
+before_install:
+  - openssl aes-256-cbc -K $encrypted_aa5b5307268a_key -iv $encrypted_aa5b5307268a_iv
+    -in mirumon.keystore.enc -out mirumon.keystore -d
+  - chmod +x gradlew
+
+before_script:
+  - mkdir -p $ANDROID_HOME/licenses
+  - echo -e "\n8933bad161af4178b1185d1a37fbf41ea5269c55" > $ANDROID_HOME/licenses/android-sdk-license
+  - echo -e "d56f5187479451eabf01fb78af6dfcb131a6481e" >> $ANDROID_HOME/licenses/android-sdk-license
+  - echo -e "\n504667f4c0de7af1a06de9f4b1727b84351f2910" > $ANDROID_HOME/licenses/android-sdk-preview-license
+
+script:
+  - ./gradlew clean build check jacocoTestDebugUnitTestReport --no-daemon --stacktrace
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - "$HOME/.gradle/caches/"
+    - "$HOME/.gradle/wrapper/"
+    - "$HOME/.android/build-cache"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: lhkxdsj0NK1KO3DO0Arp4xFBBD5m41z9xepTHTU40RncIECEYz5JRbfE+NdiISOUDsfCwIR0VqrlkKnCl+R/pNx41YdSm51c7mGYPUBxyhwstg1r8ez8CWRWs6nKLBw/ao0+8LOijbyCo4+DZSPiJCb2VW4Z8lnN0g+eAzQE1ALElKpjumqmbG7EuR1CJAYfY2Hh2RClX5jgQqojF1kiZV5XwkxsG9np7gKWMJASS8V6ifF76RRJoDXaVGsxw0txmhykRnH/8ValvW/vfhB5QX9ZCwMr47HhXTvO3fvnX/HNngOm+GJNuiqJ7jLQxBao+CX8MBgopUPg6tpbMJTpbElHO/dFPY6zQb84TX6eUdrO2rJn8b+OK/xj7CZg81jdXws3Kl7D95EyNyO2BoRXKL5d6W6v3sdWV+hN9KPwxKnmdEGiZhoF6LgntvwuLtlFmU7ZOYDFHIrXyAR40p1Km73ARmH4NbxHa/iTNdVvT3tXc2o1MY9+bmXD2aOrWppyOowbfhDTaX6ZddgbyNXxN4anOlNGR78wxLjjiybTFv28mDMg2JAMUn5a4TEhiGBzGEkyd0E7mnt82w6gxBDmodwsObEoTQlyal1NR0I+3KHq9+NGDnkSD14YKZtg/nN7vBasp29fQlWOLLJjqEH40mg52OfKncmWrY1fOFl771w=
+  file: app/build/outputs/apk/release/app-release.apk
+  name: "$TRAVIS_COMMIT_MESSAGE"
+  body: "Changelog: $TRAVIS_COMMIT_RANGE"
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: mirumon/mirumon-android
+    branch: master
+
+notifications:
+  email: false
