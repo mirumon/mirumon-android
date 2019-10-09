@@ -3,7 +3,7 @@
     <string name="kiwami">\"Kiwami\" is \"Cool in Japanese\"</string>
     <string name="groups_tab_text">My Groups</string>
     <string name="devices_tab_text">Devices</string>
-    <string name="add_group_button_text">New group</string>
+    <string name="add_group_button_text">Create a group</string>
     <string name="delimeter">::</string>
     <string name="save_group">Save</string>
     <string name="cancel_group">Cancel</string>

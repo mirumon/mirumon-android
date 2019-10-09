@@ -25,8 +25,6 @@ class GroupListFragment : Fragment() {
         group_list_rv.layoutManager = LinearLayoutManager(context)
 
         group_add_btn.setOnClickListener {
-            val dialog =  CreateGroupDialog()
-            dialog.show(fragmentManager!!, "create")
         }
     }
 }

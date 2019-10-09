@@ -59,6 +59,7 @@
         android:background="@color/colorPrimaryDark"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabSelectedTextColor="@color/colorSelection"
+        app:tabIndicatorColor="@color/colorAccentFont"
         app:tabTextColor="@color/colorMainFont">
 
         <com.google.android.material.tabs.TabItem
