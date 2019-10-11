@@ -9,4 +9,5 @@
     <color name = "colorOnline">#29C3A9</color>
     <color name = "colorOffline">#DB5D5D</color>
     <color name="colorCreateDialogFont">#3A485B</color>
+    <color name="colorShadowGradient">#000B50D4</color>
 </resources>

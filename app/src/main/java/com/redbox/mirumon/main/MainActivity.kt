@@ -15,7 +15,11 @@ class MainActivity : AppCompatActivity() {
 
         main_fragments_vp.adapter =
             MainViewPagerAdapter(supportFragmentManager)
-        main_fragments_vp.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(main_tabs_tl))
+        main_fragments_vp.addOnPageChangeListener(
+            TabLayout.TabLayoutOnPageChangeListener(
+                main_tabs_tl
+            )
+        )
 
         main_tabs_tl.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab?) {
@@ -30,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-        main_search_ib.setOnClickListener{
+        main_search_ib.setOnClickListener {
             Log.d("CLicked", "search")
         }
 

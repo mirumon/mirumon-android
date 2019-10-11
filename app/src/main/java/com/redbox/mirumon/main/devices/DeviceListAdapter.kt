@@ -1,11 +1,15 @@
 package com.redbox.mirumon.main.devices
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import androidx.constraintlayout.widget.ConstraintLayout
 
 import androidx.recyclerview.widget.RecyclerView
 import com.redbox.mirumon.R
+import kotlinx.android.synthetic.main.device_list_item.view.*
 
 class DeviceListAdapter : RecyclerView.Adapter<DeviceListAdapter.DeviceViewHolder>() {
 
@@ -21,8 +25,21 @@ class DeviceListAdapter : RecyclerView.Adapter<DeviceListAdapter.DeviceViewHolde
 
     override fun getItemCount() = 16
 
-    override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {}
+    override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {
+    }
 
+    class DeviceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    class DeviceViewHolder(view: View) : RecyclerView.ViewHolder(view)
+        val powerButton: ImageButton = view.device_power_btn
+        val foreground: ConstraintLayout = view.device_foreground_cl
+
+        init {
+            powerButton.setOnClickListener {
+                Log.d("T", "A  БЛЯТЬ")
+            }
+            foreground.setOnClickListener {
+                Log.d("AAAA", "ASDASDSDASD")
+            }
+        }
+    }
 }

@@ -18,13 +18,11 @@ class GroupListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_group_list, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)   {
         super.onViewCreated(view, savedInstanceState)
 
         group_list_rv.adapter = GroupListAdapter()
-        group_list_rv.layoutManager = LinearLayoutManager(context)
+        group_list_rv.layoutManager = LinearLayoutManager(this.context)
 
-        group_add_btn.setOnClickListener {
-        }
     }
 }
