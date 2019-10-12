@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_list_item_width">70dp</dimen>
+    <dimen name="dp_list_item_height">70dp</dimen>
+    <dimen name="dp_device_indicator_aspect">8dp</dimen>
+    <dimen name="dp_group_indicator_aspect">12dp</dimen>
+    <dimen name="dp_power_aspect">40dp</dimen>
+    <dimen name="dp_toolbar_height">50dp</dimen>
+</resources>

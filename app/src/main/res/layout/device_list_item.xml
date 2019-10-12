@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.chauthai.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="@dimen/dp_list_item_height"
     app:dragEdge="right"
-    app:mode="same_level"
-    android:elevation="3dp">
+    app:mode="same_level">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/dp_list_item_width"
+        android:layout_height="@dimen/dp_list_item_height"
         android:background="@color/colorPrimaryDark">
 
         <ImageButton
             android:id="@+id/device_power_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/dp_power_aspect"
+            android:layout_height="@dimen/dp_power_aspect"
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/ic_power"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,14 +29,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp">
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10">
 
 
         <ImageView
             android:id="@+id/device_indicator_iv"
-            android:layout_width="8dp"
-            android:layout_height="8dp"
+            android:layout_width="@dimen/dp_device_indicator_aspect"
+            android:layout_height="@dimen/dp_device_indicator_aspect"
+            android:layout_marginStart="@dimen/dp_10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -46,8 +45,8 @@
 
         <ImageView
             android:id="@+id/device_icon_iv"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="@dimen/dp_list_item_width"
+            android:layout_height="@dimen/dp_list_item_height"
             android:scaleType="centerInside"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/device_indicator_iv"
@@ -58,10 +57,10 @@
             android:id="@+id/dev_n_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginStart="@dimen/dp_10"
             android:fontFamily="@font/lato_bold"
-            android:text="name"
+            android:text="@string/device_item_name"
             android:textColor="@color/colorMainFont"
             app:layout_constraintLeft_toRightOf="@id/device_icon_iv"
             app:layout_constraintTop_toTopOf="@id/device_icon_iv" />
@@ -71,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
-            android:text="user"
+            android:text="@string/device_item_user"
             android:textColor="@color/colorMainFont"
             app:layout_constraintLeft_toLeftOf="@id/dev_n_tv"
             app:layout_constraintTop_toBottomOf="@id/dev_n_tv" />
@@ -81,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
-            android:text="domain"
+            android:text="@string/device_item_domain"
             android:textColor="@color/colorMainFont"
             app:layout_constraintLeft_toLeftOf="@id/dev_u_tv"
             app:layout_constraintTop_toBottomOf="@id/dev_u_tv" />
@@ -110,7 +109,7 @@
             android:id="@+id/delimeter_tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="@dimen/dp_5"
             android:fontFamily="@font/lato_bold"
             android:text="@string/delimeter"
             android:textColor="@color/colorMainFont"
@@ -121,9 +120,9 @@
             android:id="@+id/device_name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="@dimen/dp_20"
             android:fontFamily="@font/lato_bold"
-            android:text="red-desktop"
+            android:text="@string/text_placeholder"
             android:textColor="@color/colorAccentFont"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/delimeter_tv1"
@@ -134,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
-            android:text="aredruss"
+            android:text="@string/text_placeholder"
             android:textColor="@color/colorMainFont"
             app:layout_constraintLeft_toLeftOf="@id/device_name_tv"
             app:layout_constraintTop_toBottomOf="@id/device_name_tv" />
@@ -144,7 +143,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
-            android:text="ippo.mirea.ru"
+            android:text="@string/text_placeholder"
             android:textColor="@color/colorMainFont"
             app:layout_constraintLeft_toLeftOf="@id/device_user_tv"
             app:layout_constraintTop_toBottomOf="@id/device_user_tv" />

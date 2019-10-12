@@ -19,7 +19,7 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
         )
     }
 
-    override fun getItemCount() = 20
+    override fun getItemCount() = 3
 
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
     }
@@ -28,6 +28,5 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
         Log.d("Shutting down", "PC #$position")
     }
 
-    class GroupViewHolder(view : View) : RecyclerView.ViewHolder(view){
-    }
+    class GroupViewHolder(view : View) : RecyclerView.ViewHolder(view)
 }

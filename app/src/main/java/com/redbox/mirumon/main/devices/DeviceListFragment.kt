@@ -23,6 +23,6 @@ class DeviceListFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         device_list_rv.adapter = DeviceListAdapter().apply { notifyDataSetChanged() }
-        device_list_rv.layoutManager = LinearLayoutManager(context)
+        device_list_rv.layoutManager = LinearLayoutManager(this.context)
     }
 }

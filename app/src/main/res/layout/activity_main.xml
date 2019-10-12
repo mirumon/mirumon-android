@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     tools:context=".main.MainActivity">
 
     <Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/dp_toolbar_height"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -20,7 +19,7 @@
         android:id="@+id/main_app_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/dp_20"
         android:fontFamily="@font/lato_bold"
         android:text="@string/app_name"
         android:textColor="@color/colorMainFont"
@@ -33,7 +32,7 @@
         android:id="@+id/main_search_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="@dimen/dp_20"
         android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
         app:layout_constraintRight_toLeftOf="@id/main_account_ib"
@@ -44,7 +43,7 @@
         android:id="@+id/main_account_ib"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="@dimen/dp_20"
         android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintRight_toRightOf="@id/toolbar"
@@ -58,8 +57,8 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:tabSelectedTextColor="@color/colorSelection"
         app:tabIndicatorColor="@color/colorAccentFont"
+        app:tabSelectedTextColor="@color/colorSelection"
         app:tabTextColor="@color/colorMainFont">
 
         <com.google.android.material.tabs.TabItem

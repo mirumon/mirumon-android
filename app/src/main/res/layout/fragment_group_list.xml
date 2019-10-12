@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -21,7 +20,7 @@
     <ImageView
         android:id="@+id/group_shadow_iv"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="@dimen/dp_10"
         android:background="@drawable/shadow"
         app:layout_constraintBottom_toTopOf="@id/group_add_tlb"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -40,8 +39,8 @@
         <Button
             android:id="@+id/group_add_btn"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_margin="10dp"
+            android:layout_height="@dimen/dp_30"
+            android:layout_margin="@dimen/dp_10"
             android:background="@drawable/add_button_background"
             android:fontFamily="@font/lato_bold"
             android:text="@string/add_group_button_text"

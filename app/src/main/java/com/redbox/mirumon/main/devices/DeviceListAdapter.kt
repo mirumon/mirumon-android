@@ -23,22 +23,22 @@ class DeviceListAdapter : RecyclerView.Adapter<DeviceListAdapter.DeviceViewHolde
         )
     }
 
-    override fun getItemCount() = 16
+    override fun getItemCount() = 3
 
     override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {
     }
 
     class DeviceViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val powerButton: ImageButton = view.device_power_btn
-        val foreground: ConstraintLayout = view.device_foreground_cl
+        private val powerButton: ImageButton = view.device_power_btn
+        private val foreground: ConstraintLayout = view.device_foreground_cl
 
         init {
             powerButton.setOnClickListener {
-                Log.d("T", "A  БЛЯТЬ")
+                Log.d("Dev", "Power Button Clicked")
             }
             foreground.setOnClickListener {
-                Log.d("AAAA", "ASDASDSDASD")
+                Log.d("Dev", "Opened Device Info")
             }
         }
     }
