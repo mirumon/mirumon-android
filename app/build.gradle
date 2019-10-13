@@ -59,4 +59,7 @@ dependencies {
 
     //Swipe to action
     implementation 'com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1'
+
+    // annotations for GSON parsing
+    implementation "com.squareup.retrofit2:converter-gson:2.6.0"
 }
