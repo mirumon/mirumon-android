@@ -1,6 +1,5 @@
 package com.redbox.mirumon.main.groups
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,9 +23,10 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
     }
 
-    fun shutDown(position: Int){
-        Log.d("Shutting down", "PC #$position")
-    }
-
     class GroupViewHolder(view : View) : RecyclerView.ViewHolder(view)
+
+    fun shutDown(address : String) : Boolean{
+        val clicked = true
+        return clicked
+    }
 }
