@@ -31,13 +31,10 @@ class MainActivity : AppCompatActivity() {
             override fun onTabSelected(p0: TabLayout.Tab?) {
                 main_fragments_vp.currentItem = p0!!.position
             }
-
         })
 
         main_search_ib.setOnClickListener {
             Log.d("CLicked", "search")
         }
-
     }
 }
-

@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.redbox.mirumon.R
 
-
 class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GroupViewHolder {
         return GroupViewHolder(
@@ -23,9 +22,9 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
     }
 
-    class GroupViewHolder(view : View) : RecyclerView.ViewHolder(view)
+    class GroupViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
-    fun shutDown(address : String) : Boolean{
+    fun shutDown(address: String): Boolean {
         val clicked = true
         return clicked
     }

@@ -17,5 +17,4 @@ class MainViewPagerAdapter(fm: FragmentManager, val tabCount: Int = 2) :
     }
 
     override fun getCount() = tabCount
-
 }

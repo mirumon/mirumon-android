@@ -10,16 +10,15 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class ShutdownTest {
 
-    lateinit var adapter : GroupListAdapter
+    lateinit var adapter: GroupListAdapter
 
     @Before
-    fun setUp(){
+    fun setUp() {
         adapter = GroupListAdapter()
     }
 
     @Test
     fun shutdown_happened() {
-        assertEquals(true, adapter.shutDown("AA-DD-dDD-324") )
+        assertEquals(true, adapter.shutDown("AA-DD-dDD-324"))
     }
-
 }

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.redbox.mirumon.R
 import kotlinx.android.synthetic.main.fragment_device_list.*
 
-class DeviceListFragment : Fragment(){
+class DeviceListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -17,7 +17,6 @@ class DeviceListFragment : Fragment(){
     ): View? {
         return inflater.inflate(R.layout.fragment_device_list, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
