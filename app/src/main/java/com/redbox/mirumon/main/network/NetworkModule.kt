@@ -7,7 +7,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkModule {
-    val retrofit : Retrofit
+    val retrofit: Retrofit
         get() {
             val interceptorLogger = HttpLoggingInterceptor()
             interceptorLogger.level = (HttpLoggingInterceptor.Level.BASIC)

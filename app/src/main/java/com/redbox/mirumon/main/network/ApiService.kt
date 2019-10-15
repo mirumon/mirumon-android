@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("/computers")
-    fun getComputers() : Single<List<Computer>>
+    fun getComputers(): Single<List<Computer>>
 }
