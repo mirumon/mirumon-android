@@ -9,7 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 object NetworkModule {
     val retrofit : Retrofit
         get() {
-
             val interceptorLogger = HttpLoggingInterceptor()
             interceptorLogger.level = (HttpLoggingInterceptor.Level.BASIC)
             val clientLogger = OkHttpClient.Builder().addInterceptor(interceptorLogger).build()
