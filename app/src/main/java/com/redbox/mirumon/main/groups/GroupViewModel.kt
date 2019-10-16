@@ -1,6 +1,5 @@
 package com.redbox.mirumon.main.groups
 
-class GroupViewModel {
-    fun getGroups() {
-    }
-}
+import androidx.lifecycle.ViewModel
+
+class GroupViewModel : ViewModel()
