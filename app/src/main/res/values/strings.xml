@@ -8,4 +8,5 @@
     <string name="device_item_name">name</string>
     <string name="device_item_user">user</string>
     <string name="device_item_domain">domain</string>
+    <string name="device_info">Device Info</string>
 </resources>

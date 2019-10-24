@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_device_list.*
 
 class DeviceListFragment : Fragment() {
 
-    lateinit var viewModel: DeviceViewModel
+    private lateinit var viewModel: DeviceViewModel
     private val deviceListAdapter = DeviceListAdapter()
 
     override fun onCreateView(
