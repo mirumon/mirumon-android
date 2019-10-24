@@ -1,8 +1,10 @@
 package com.redbox.mirumon.main.network
 
+import android.util.Log
 import okhttp3.Response
 import okhttp3.WebSocket
 import okhttp3.WebSocketListener
+import okio.ByteString
 import org.greenrobot.eventbus.EventBus
 
 class MiruWebSocketListener : WebSocketListener() {
@@ -14,7 +16,7 @@ class MiruWebSocketListener : WebSocketListener() {
     }
 
     override fun onMessage(webSocket: WebSocket, text: String) {
-       EventBus.getDefault().post(text)
+        EventBus.getDefault().post(text)
     }
 
     override fun onFailure(webSocket: WebSocket, t: Throwable, response: Response?) {
@@ -24,5 +26,10 @@ class MiruWebSocketListener : WebSocketListener() {
 
     override fun onClosed(webSocket: WebSocket, code: Int, reason: String) {
         webSocket.close(OK_CLOSED_STATUS, null)
+    }
+
+    override fun onMessage(webSocket: WebSocket, bytes: ByteString) {
+        EventBus.getDefault().post(bytes)
+
     }
 }

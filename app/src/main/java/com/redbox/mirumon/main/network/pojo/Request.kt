@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 data class Request<T>(
     @SerializedName("event_type")
     val eventType: String,
-    val payload : T
+    val payload: T
 )

@@ -5,7 +5,7 @@ import okhttp3.Request
 import okhttp3.WebSocket
 
 object WebSocketModule {
-    val request = Request.Builder().url("wss://api.mirumon.dev").build()
+    val request = Request.Builder().url("wss://api.mirumon.dev/api/ws").build()
     val client = OkHttpClient()
 
     fun getWebSocket(): WebSocket {

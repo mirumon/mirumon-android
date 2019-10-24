@@ -17,7 +17,7 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
         )
     }
 
-    override fun getItemCount() = 3
+    override fun getItemCount() = 0
 
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
     }
