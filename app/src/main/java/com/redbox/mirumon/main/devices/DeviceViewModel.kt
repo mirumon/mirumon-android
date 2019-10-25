@@ -1,7 +1,5 @@
 package com.redbox.mirumon.main.devices
 
-import android.media.session.MediaSession
-import android.util.Log
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -27,16 +25,13 @@ class DeviceViewModel : ViewModel() {
     }
 
     fun getDevices() {
-        Log.d("getDevices", "?")
         val request = Request("computers-list", deviceList.value)
         webSocket.send(Gson().toJson(request))
-        Log.d("Json", Gson().toJson(request))
     }
 
     @Subscribe(threadMode = ThreadMode.ASYNC)
     fun onRecieve(response: String) {
-       Log.d("RESPONSE", response)
-       val type = object : TypeToken<Request<List<Computer>>>(){}.type
+        val type = object : TypeToken<Request<List<Computer>>>() {}.type
         deviceList.postValue(Gson().fromJson<Request<List<Computer>>>(response, type).payload)
     }
 
