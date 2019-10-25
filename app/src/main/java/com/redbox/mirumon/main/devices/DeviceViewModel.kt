@@ -8,7 +8,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redbox.mirumon.main.network.WebSocketModule
 import com.redbox.mirumon.main.network.pojo.Computer
-import com.redbox.mirumon.main.network.pojo.Request
+import com.redbox.mirumon.main.network.pojo.ApiMessage
 import okhttp3.WebSocket
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -25,14 +25,14 @@ class DeviceViewModel : ViewModel() {
     }
 
     fun getDevices() {
-        val request = Request("computers-list", deviceList.value)
+        val request = ApiMessage("computers-list", deviceList.value)
         webSocket.send(Gson().toJson(request))
     }
 
     @Subscribe(threadMode = ThreadMode.ASYNC)
     fun onRecieve(response: String) {
-        val type = object : TypeToken<Request<List<Computer>>>() {}.type
-        deviceList.postValue(Gson().fromJson<Request<List<Computer>>>(response, type).payload)
+        val type = object : TypeToken<ApiMessage<List<Computer>>>() {}.type
+        deviceList.postValue(Gson().fromJson<ApiMessage<List<Computer>>>(response, type).payload)
     }
 
     fun observeDevices(lifecycleOwner: LifecycleOwner, callbackList: (List<Computer>) -> Unit) =
