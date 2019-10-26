@@ -17,10 +17,15 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
         )
     }
 
-    override fun getItemCount() = 1
+    override fun getItemCount() = 0
 
     override fun onBindViewHolder(holder: GroupViewHolder, position: Int) {
     }
 
     class GroupViewHolder(view: View) : RecyclerView.ViewHolder(view)
+
+    fun shutDown(address: String): Boolean {
+        val clicked = true
+        return clicked
+    }
 }
