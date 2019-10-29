@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main
+package com.redbox.mirumon.main.mainscreen
 
 import android.os.Bundle
 import android.util.Log

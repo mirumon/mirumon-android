@@ -1,6 +1,6 @@
 package com.redbox.mirumon
 
-import com.redbox.mirumon.main.groups.GroupListAdapter
+import com.redbox.mirumon.main.mainscreen.grouplist.GroupListAdapter
 import junit.framework.TestCase.assertEquals
 import org.junit.Before
 import org.junit.Test

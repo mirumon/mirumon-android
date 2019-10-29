@@ -9,4 +9,10 @@
     <string name="device_item_user">user</string>
     <string name="device_item_domain">domain</string>
     <string name="device_info">Device Info</string>
+    <string name="common_info">common info</string>
+    <string name="domain">domain</string>
+    <string name="current_user">current user</string>
+    <string name="workgroup">workgroup</string>
+    <string name="PC_name">PC name</string>
+
 </resources>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".device.DeviceActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/device_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/device_back_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/dp_15"
+        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@id/device_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/device_toolbar" />
+
+    <TextView
+        android:id="@+id/device_screen_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:fontFamily="@font/lato_bold"
+        android:text="Device Info"
+        android:textColor="@color/colorMainFont"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/device_toolbar"
+        app:layout_constraintLeft_toRightOf="@id/device_back_btn"
+        app:layout_constraintTop_toTopOf="@id/device_toolbar" />
+
+    <ImageView
+        android:id="@+id/device_indicator_iv"
+        android:layout_width="@dimen/dp_device_indicator_aspect"
+        android:layout_height="@dimen/dp_device_indicator_aspect"
+        android:layout_marginStart="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="@id/device_icon_iv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/device_icon_iv"
+        app:srcCompat="@drawable/online_indicator" />
+
+    <ImageView
+        android:id="@+id/device_icon_iv"
+        android:layout_width="@dimen/dp_list_item_width"
+        android:layout_height="@dimen/dp_list_item_height"
+        android:layout_marginTop="@dimen/dp_20"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toRightOf="@id/device_indicator_iv"
+        app:layout_constraintTop_toBottomOf="@id/device_toolbar"
+        app:srcCompat="@drawable/device" />
+
+    <TextView
+        android:id="@+id/name_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/PC_name"
+        android:textColor="@color/colorMainFont"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@id/device_icon_iv"
+        app:layout_constraintTop_toTopOf="@id/device_icon_iv" />
+
+    <TextView
+        android:id="@+id/device_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/text_background"
+        android:fontFamily="@font/lato_bold"
+        android:padding="5dp"
+        android:paddingStart="@dimen/dp_10"
+
+        android:paddingEnd="0dp"
+        android:textColor="@color/colorAccentFont"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@id/name_label_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_label_tv" />
+
+    <TextView
+        android:id="@+id/domain_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/domain"
+        android:textColor="@color/colorMainFont"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_icon_iv" />
+
+    <TextView
+        android:id="@+id/device_domain_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/text_background"
+        android:fontFamily="@font/lato_bold"
+        android:padding="5dp"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="0dp"
+        android:textColor="@color/colorAccentFont"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/domain_label_tv" />
+
+
+    <TextView
+        android:id="@+id/group_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/workgroup"
+        android:textColor="@color/colorMainFont"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_domain_tv" />
+
+
+    <TextView
+        android:id="@+id/device_group_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/text_background"
+        android:fontFamily="@font/lato_bold"
+        android:padding="5dp"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="0dp"
+        android:textColor="@color/colorAccentFont"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/group_label_tv" />
+
+
+    <TextView
+        android:id="@+id/user_label_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/current_user"
+        android:textColor="@color/colorMainFont"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_group_tv" />
+
+
+    <TextView
+        android:id="@+id/device_user_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/text_background"
+        android:fontFamily="@font/lato_bold"
+        android:padding="5dp"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="0dp"
+        android:textColor="@color/colorAccentFont"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_label_tv" />
+
+
+    <Button
+        android:id="@+id/device_common_btn"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:background="@drawable/text_background"
+        android:drawableStart="@drawable/ic_info"
+        android:drawableEnd="@drawable/ic_goto"
+        android:drawablePadding="@dimen/dp_10"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10"
+        android:text="@string/common_info"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/device_user_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
