@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.common.CommonInfoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_toolbar_height"
+        android:background="@color/colorPrimaryDark"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/common_back_btn"
+        android:layout_width="@dimen/image_button_aspect"
+        android:layout_height="@dimen/image_button_aspect"
+        android:layout_marginStart="@dimen/dp_15"
+        android:background="@color/colorPrimaryDark"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toBottomOf="@id/common_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/common_toolbar" />
+
+    <TextView
+        android:id="@+id/common_screen_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:fontFamily="@font/lato_bold"
+        android:textColor="@color/colorMainFont"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/common_toolbar"
+        app:layout_constraintLeft_toRightOf="@id/common_back_btn"
+        app:layout_constraintTop_toTopOf="@id/common_toolbar" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/common_tabs_tl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintTop_toBottomOf="@id/common_toolbar"
+        app:tabIconTint="@color/colorAccent"
+        app:tabIndicatorColor="@color/colorAccentFont"
+        app:tabSelectedTextColor="@color/colorSelection"
+        app:tabTextColor="@color/colorMainFont">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_info" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_software" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/common_vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/common_tabs_tl" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

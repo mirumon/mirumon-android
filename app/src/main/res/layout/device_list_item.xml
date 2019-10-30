@@ -19,8 +19,8 @@
             android:background="@color/colorPrimaryDark"
             android:src="@drawable/ic_power"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -57,8 +57,8 @@
             android:id="@+id/dev_n_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
             android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
             android:fontFamily="@font/lato_bold"
             android:text="@string/device_item_name"
             android:textColor="@color/colorMainFont"
@@ -96,7 +96,6 @@
             app:layout_constraintTop_toTopOf="@id/dev_n_tv" />
 
         <TextView
-            android:id="@+id/delimeter_tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
@@ -129,7 +128,7 @@
             app:layout_constraintLeft_toRightOf="@id/delimeter_tv1" />
 
         <TextView
-            android:id="@+id/device_user_tv"
+            android:id="@+id/common_arch_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
@@ -139,15 +138,14 @@
             app:layout_constraintTop_toBottomOf="@id/device_name_tv" />
 
         <TextView
-            android:id="@+id/device_domain_tv"
+            android:id="@+id/common_os_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_bold"
             android:text="@string/text_placeholder"
             android:textColor="@color/colorMainFont"
-            app:layout_constraintLeft_toLeftOf="@id/device_user_tv"
-            app:layout_constraintTop_toBottomOf="@id/device_user_tv" />
-
+            app:layout_constraintLeft_toLeftOf="@id/common_arch_tv"
+            app:layout_constraintTop_toBottomOf="@id/common_arch_tv" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.devices
+package com.redbox.mirumon.main.mainscreen.devicelist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,26 +12,27 @@ import kotlinx.android.synthetic.main.fragment_device_list.*
 
 class DeviceListFragment : Fragment() {
 
-    private lateinit var viewModel: DeviceViewModel
-    private val deviceListAdapter = DeviceListAdapter()
+    private lateinit var listViewModel: DeviceListViewModel
+    private val adapter = DeviceListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProviders.of(this).get(DeviceViewModel::class.java)
+        listViewModel = ViewModelProviders.of(this).get(DeviceListViewModel::class.java)
+        lifecycle.addObserver(listViewModel)
         return inflater.inflate(R.layout.fragment_device_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getDevices()
+        listViewModel.getDevices()
 
-        viewModel.observeDevices(this) {
-            deviceListAdapter.deviceList = it
-            device_list_rv.adapter = deviceListAdapter.apply { notifyDataSetChanged() }
+        listViewModel.observeDevices(this) {
+            adapter.deviceList = it
+            device_list_rv.adapter = adapter.apply { notifyDataSetChanged() }
         }
 
         device_list_rv.layoutManager = LinearLayoutManager(this.context)

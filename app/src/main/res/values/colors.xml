@@ -6,7 +6,7 @@
     <color name="colorMainFont">#98BAE7</color>
     <color name="colorAccentFont">#FFFFFF</color>
     <color name="colorSelection">#FFFFFF</color>
-    <color name = "colorOnline">#29C3A9</color>
-    <color name = "colorOffline">#DB5D5D</color>
+    <color name="colorOnline">#29C3A9</color>
+    <color name="colorOffline">#DB5D5D</color>
     <color name="colorShadowGradient">#000B50D4</color>
 </resources>

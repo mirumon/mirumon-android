@@ -5,12 +5,12 @@ import okhttp3.Request
 import okhttp3.WebSocket
 
 object WebSocketModule {
-    val request = Request.Builder().url("wss://api.mirumon.dev/api/ws").build()
-    val client = OkHttpClient()
+    private val request = Request.Builder().url("wss://api.mirumon.dev/api/ws").build()
+    private val client = OkHttpClient()
+    var miruWebSocket: WebSocket
 
-    fun getWebSocket(): WebSocket {
-        val webSocket: WebSocket = client.newWebSocket(request, MiruWebSocketListener())
+    init {
+        miruWebSocket = client.newWebSocket(request, MiruWebSocketListener())
         client.dispatcher().executorService().shutdown()
-        return webSocket
     }
 }

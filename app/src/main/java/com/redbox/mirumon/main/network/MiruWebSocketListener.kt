@@ -8,11 +8,7 @@ import org.greenrobot.eventbus.EventBus
 
 class MiruWebSocketListener : WebSocketListener() {
 
-    val OK_CLOSED_STATUS = 1000
-
-    override fun onOpen(webSocket: WebSocket, response: Response) {
-        super.onOpen(webSocket, response)
-    }
+    private val OK_CLOSED_STATUS = 1000
 
     override fun onMessage(webSocket: WebSocket, text: String) {
         EventBus.getDefault().post(text)

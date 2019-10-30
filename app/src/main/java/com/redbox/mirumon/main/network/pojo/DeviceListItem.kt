@@ -2,8 +2,8 @@ package com.redbox.mirumon.main.network.pojo
 
 import com.google.gson.annotations.SerializedName
 
-data class Computer(
-    @SerializedName("mac_adress")
+data class DeviceListItem(
+    @SerializedName("mac_address")
     val macAddress: String,
     val name: String,
     @SerializedName("username")
