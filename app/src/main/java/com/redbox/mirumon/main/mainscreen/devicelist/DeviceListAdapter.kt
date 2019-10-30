@@ -56,8 +56,8 @@ class DeviceListAdapter : RecyclerView.Adapter<DeviceListAdapter.DeviceViewHolde
         val layout: ConstraintLayout = view.device_foreground_cl
         val context: Context = view.context
         val nameTv: TextView = view.device_name_tv
-        val userTv: TextView = view.device_user_tv
-        val domainTv: TextView = view.device_domain_tv
+        val userTv: TextView = view.common_arch_tv
+        val domainTv: TextView = view.common_os_tv
         val indicatorIv: ImageView = view.device_indicator_iv
     }
 }

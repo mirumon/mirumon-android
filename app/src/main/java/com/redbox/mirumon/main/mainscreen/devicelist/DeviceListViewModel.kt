@@ -1,6 +1,12 @@
 package com.redbox.mirumon.main.mainscreen.devicelist
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.Lifecycle
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redbox.mirumon.main.network.WebSocketModule
@@ -11,12 +17,10 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-
 class DeviceListViewModel : ViewModel(), LifecycleObserver {
 
     private val deviceList = MutableLiveData<List<DeviceListItem>>()
     private val webSocket: WebSocket = WebSocketModule.miruWebSocket
-
 
     fun getDevices() {
         val request = ApiMessage("computers-list", deviceList.value)
@@ -43,7 +47,7 @@ class DeviceListViewModel : ViewModel(), LifecycleObserver {
             Observer(callbackList)
         )
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     private fun onLifeCycleStart() {
         EventBus.getDefault().register(this)
     }

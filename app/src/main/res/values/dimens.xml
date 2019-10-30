@@ -11,4 +11,6 @@
     <dimen name="dp_power_aspect">40dp</dimen>
     <dimen name="dp_toolbar_height">50dp</dimen>
     <dimen name="dp_15">15dp</dimen>
+    <dimen name="field_height">32dp</dimen>
+    <dimen name="image_button_aspect">24dp</dimen>
 </resources>

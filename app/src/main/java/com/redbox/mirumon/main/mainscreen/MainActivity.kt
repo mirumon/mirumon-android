@@ -1,7 +1,6 @@
 package com.redbox.mirumon.main.mainscreen
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.redbox.mirumon.R
@@ -35,9 +34,5 @@ class MainActivity : AppCompatActivity() {
                 main_fragments_vp.currentItem = p0!!.position
             }
         })
-
-        main_search_ib.setOnClickListener {
-            Log.d("CLicked", "search")
-        }
     }
 }

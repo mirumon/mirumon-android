@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_device_list.*
 class DeviceListFragment : Fragment() {
 
     private lateinit var listViewModel: DeviceListViewModel
-    private val deviceListAdapter = DeviceListAdapter()
+    private val adapter = DeviceListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,11 +31,10 @@ class DeviceListFragment : Fragment() {
         listViewModel.getDevices()
 
         listViewModel.observeDevices(this) {
-            deviceListAdapter.deviceList = it
-            device_list_rv.adapter = deviceListAdapter.apply { notifyDataSetChanged() }
+            adapter.deviceList = it
+            device_list_rv.adapter = adapter.apply { notifyDataSetChanged() }
         }
 
         device_list_rv.layoutManager = LinearLayoutManager(this.context)
     }
-
 }

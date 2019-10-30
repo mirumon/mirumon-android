@@ -9,5 +9,6 @@ data class DeviceInfo(
     @SerializedName("current_user")
     val user: User,
     val domain: String,
-    val workgroup: String
+    val workgroup: String,
+    val os: List<OperatingSystem>
 )

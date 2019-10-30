@@ -13,6 +13,4 @@ object WebSocketModule {
         miruWebSocket = client.newWebSocket(request, MiruWebSocketListener())
         client.dispatcher().executorService().shutdown()
     }
-
-
 }
