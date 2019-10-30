@@ -18,10 +18,7 @@ class DeviceActivity : AppCompatActivity() {
         lifecycle.addObserver(viewModel)
         setContentView(R.layout.activity_device)
 
-        if (intent.hasExtra("address")) {
-            viewModel.notifyWebsocket(intent.extras.getString("address"))
-            savedInstanceState?.putString("address", intent.extras.getString("address"))
-        }
+        viewModel.notifyWebsocket(intent.getStringExtra("address"))
 
         viewModel.observeDevice(this) {
             device_name_tv.text = it.name

@@ -1,12 +1,6 @@
 package com.redbox.mirumon.main.common.overview
 
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redbox.mirumon.main.common.CommonRepository
@@ -21,7 +15,7 @@ import org.greenrobot.eventbus.ThreadMode
 
 class OverViewModel : ViewModel(), LifecycleObserver {
     private val osInfo = MutableLiveData<OperatingSystem>()
-    var webSocket = WebSocketModule.miruWebSocket
+    private var webSocket = WebSocketModule.miruWebSocket
 
     fun notifyWebsocket() {
         val request = ApiMessage(
@@ -45,4 +39,10 @@ class OverViewModel : ViewModel(), LifecycleObserver {
     fun onFragmentStart() {
         EventBus.getDefault().register(this)
     }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    fun onFragmentPause() {
+        EventBus.getDefault().unregister(this)
+    }
+
 }

@@ -1,12 +1,6 @@
 package com.redbox.mirumon.main.common.software
 
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.OnLifecycleEvent
-import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redbox.mirumon.main.common.CommonRepository
@@ -46,5 +40,10 @@ class SoftwareViewModel : ViewModel(), LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun onFragmentStart() {
         EventBus.getDefault().register(this)
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    fun onFragmentPause() {
+        EventBus.getDefault().unregister(this)
     }
 }
