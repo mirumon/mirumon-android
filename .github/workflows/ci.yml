@@ -18,7 +18,9 @@ jobs:
         with:
           gradleTasks: check jacocoTestDebugUnitTestReport
       - name: Upload coverage to Codecov
-        run: bash <(curl -s https://codecov.io/bash) -t $TOKEN -B $REF
+        run: |
+          sudo chmod 777 ./app
+          bash <(curl -s https://codecov.io/bash) -t $TOKEN -B $REF
         env:
           TOKEN: ${{ secrets.CODECOV_TOKEN }}
           REF: ${{ github.ref }}
