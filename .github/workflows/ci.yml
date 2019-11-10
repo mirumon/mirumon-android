@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - feature/*
+      - fix/*
+      - master
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run checks
+        uses: msfjarvis/setup-android@1.0
+        with:
+          entrypoint: ./gradlew
+          args: check jacocoTestDebugUnitTestReport
+      - name: Upload coverage to Codecov
+        run: bash <(curl -s https://codecov.io/bash) -t $TOKEN -B $REF
+        env:
+          TOKEN: ${{ secrets.CODECOV_TOKEN }}
+          REF: ${{ github.ref }}
