@@ -22,5 +22,6 @@
     <string name="os_version">OS version</string>
     <string name="os">OS</string>
     <string name="device_info">Device Info</string>
+    <string name="feature_tba">This feature is under development</string>
 
 </resources>
