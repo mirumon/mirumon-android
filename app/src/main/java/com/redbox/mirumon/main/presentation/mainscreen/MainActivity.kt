@@ -10,21 +10,19 @@ import com.redbox.mirumon.BuildConfig
 import com.redbox.mirumon.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : AppCompatActivity() {
 
     init {
         AppCenter.start(
-            application, BuildConfig.APPCENTER_SECRET,
+            application,
+            BuildConfig.APPCENTER_SECRET,
             Analytics::class.java, Crashes::class.java
         )
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         main_fragments_vp.adapter =
             MainViewPagerAdapter(supportFragmentManager)

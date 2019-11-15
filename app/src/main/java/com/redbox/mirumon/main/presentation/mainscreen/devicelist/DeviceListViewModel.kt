@@ -37,7 +37,6 @@ class DeviceListViewModel : ViewModel(), LifecycleObserver {
         webSocket.send(Gson().toJson(request))
     }
 
-
     fun observeDevices(
         lifecycleOwner: LifecycleOwner,
         callbackList: (List<DeviceListItem>) -> Unit
