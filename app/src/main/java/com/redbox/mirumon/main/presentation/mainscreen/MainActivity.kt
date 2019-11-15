@@ -28,11 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         main_fragments_vp.adapter =
             MainViewPagerAdapter(supportFragmentManager)
-        main_fragments_vp.addOnPageChangeListener(
-            TabLayout.TabLayoutOnPageChangeListener(
-                main_tabs_tl
-            )
-        )
+        main_tabs_tl.setupWithViewPager(main_fragments_vp)
 
         main_fragments_vp.currentItem = 1
         main_tabs_tl.getTabAt(1)?.select()
