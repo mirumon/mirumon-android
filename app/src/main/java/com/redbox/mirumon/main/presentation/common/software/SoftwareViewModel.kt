@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redbox.mirumon.main.domain.SOFTWARE
-import com.redbox.mirumon.main.domain.WebSocketModule
+import com.redbox.mirumon.main.domain.websocket.WebSocketModule
 import com.redbox.mirumon.main.domain.pojo.ApiMessage
 import com.redbox.mirumon.main.domain.pojo.DetailsRequest
 import com.redbox.mirumon.main.domain.pojo.Software

@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.domain
+package com.redbox.mirumon.main.domain.websocket
 
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -10,7 +10,10 @@ object WebSocketModule {
     var miruWebSocket: WebSocket
 
     init {
-        miruWebSocket = client.newWebSocket(request, MiruWebSocketListener())
+        miruWebSocket = client.newWebSocket(
+            request,
+            MiruWebSocketListener()
+        )
         client.dispatcher().executorService().shutdown()
     }
 }
