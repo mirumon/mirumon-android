@@ -1,4 +1,4 @@
-package com.redbox.mirumon.api
+package com.redbox.mirumon.test
 
 import com.redbox.mirumon.main.presentation.common.CommonRepository
 import org.junit.Assert.assertTrue
