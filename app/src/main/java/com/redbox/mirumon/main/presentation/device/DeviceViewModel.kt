@@ -45,7 +45,7 @@ class DeviceViewModel : ViewModel(), LifecycleObserver {
         EventBus.getDefault().register(this)
     }
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun onActivityPause() {
         EventBus.getDefault().unregister(this)
     }
