@@ -7,7 +7,7 @@
     android:isScrollContainer="true"
     android:nestedScrollingEnabled="true"
     android:overScrollMode="ifContentScrolls"
-    tools:context=".main.device.DeviceActivity">
+    tools:context=".main.presentation.device.DeviceActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/device_toolbar"
