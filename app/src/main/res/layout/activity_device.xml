@@ -30,11 +30,12 @@
         app:layout_constraintTop_toTopOf="@id/device_toolbar" />
 
     <TextView
+        style="@style/RegularTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
         android:fontFamily="@font/lato_bold"
         android:text="@string/device_info"
-        android:textColor="@color/colorMainFont"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/device_toolbar"
         app:layout_constraintLeft_toRightOf="@id/device_back_btn"
@@ -62,29 +63,27 @@
 
     <TextView
         android:id="@+id/name_label_tv"
+        style="@style/RegularTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/PC_name"
-        android:textColor="@color/colorMainFont"
         android:textSize="12sp"
         app:layout_constraintLeft_toRightOf="@id/device_icon_iv"
         app:layout_constraintTop_toTopOf="@id/device_icon_iv" />
 
     <TextView
         android:id="@+id/device_name_tv"
+        style="@style/AccentTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/dp_15"
         android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
         android:padding="5dp"
         android:paddingStart="@dimen/dp_10"
         android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="@id/name_label_tv"
         app:layout_constraintRight_toRightOf="parent"
@@ -92,31 +91,30 @@
 
     <TextView
         android:id="@+id/domain_label_tv"
+        style="@style/RegularTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_10"
+
         android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/domain"
-        android:textColor="@color/colorMainFont"
         android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_icon_iv" />
 
     <TextView
         android:id="@+id/device_domain_tv"
+        style="@style/AccentTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/dp_15"
         android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
         android:padding="5dp"
         android:paddingStart="@dimen/dp_10"
         android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/domain_label_tv" />
@@ -124,14 +122,13 @@
 
     <TextView
         android:id="@+id/workgroup_label_tv"
+        style="@style/RegularTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/workgroup"
-        android:textColor="@color/colorMainFont"
         android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_domain_tv" />
@@ -139,17 +136,16 @@
 
     <TextView
         android:id="@+id/device_workgroup_tv"
+        style="@style/AccentTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/dp_15"
         android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
         android:padding="5dp"
         android:paddingStart="@dimen/dp_10"
         android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workgroup_label_tv" />
@@ -157,14 +153,13 @@
 
     <TextView
         android:id="@+id/user_label_tv"
+        style="@style/RegularTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/current_user"
-        android:textColor="@color/colorMainFont"
         android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_workgroup_tv" />
@@ -172,17 +167,16 @@
 
     <TextView
         android:id="@+id/device_user_tv"
+        style="@style/AccentTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginEnd="@dimen/dp_15"
         android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
         android:padding="5dp"
         android:paddingStart="@dimen/dp_10"
         android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_label_tv" />
@@ -190,23 +184,15 @@
 
     <Button
         android:id="@+id/device_common_btn"
+        style="@style/RegularButton"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
         android:layout_marginStart="@dimen/dp_15"
         android:layout_marginTop="@dimen/dp_15"
         android:layout_marginEnd="@dimen/dp_15"
         android:layout_marginBottom="@dimen/dp_30"
-        android:background="@drawable/text_background"
         android:drawableStart="@drawable/ic_info"
         android:drawableEnd="@drawable/ic_goto"
-        android:drawablePadding="@dimen/dp_10"
-        android:fontFamily="@font/lato_bold"
-        android:gravity="center_vertical"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="@dimen/dp_10"
         android:text="@string/common_info"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
         android:textSize="14sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

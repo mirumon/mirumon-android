@@ -16,6 +16,7 @@ android {
         versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "APPCENTER_SECRET", '"e394c952-77cc-4f33-bfc0-dee0a1667bc6"'
+        buildConfigField "String", "BASE_URL", '"api.mirumon.dev"'
     }
 
     lintOptions {

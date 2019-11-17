@@ -9,11 +9,11 @@ import retrofit2.http.Path
 
 interface InfoService {
     @GET("/computers/{mac-adress}/details")
-    fun getDetails(@Path("mac-adress") id : String) : Single<DeviceInfo>
+    fun getDetails(@Path("mac-adress") id: String): Single<DeviceInfo>
 
     @GET("/computers/{mac-adress}/software")
-    fun getSoftware(@Path("mac-adress") id : String) : Single<List<Software>>
+    fun getSoftware(@Path("mac-adress") id: String): Single<ArrayList<Software>>
 
     @GET("/computers/{mac-adress}/details")
-    fun getOS(@Path("mac-adress") id : String) : Single<DeviceInfo>
+    fun getOS(@Path("mac-adress") id: String): Single<DeviceInfo>
 }
