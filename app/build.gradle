@@ -16,7 +16,7 @@ android {
         versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "APPCENTER_SECRET", '"e394c952-77cc-4f33-bfc0-dee0a1667bc6"'
-        buildConfigField "String", "BASE_URL", '"api.mirumon.dev"'
+        buildConfigField "String", "BASE_URL", '"https://api.mirumon.dev"'
     }
 
     lintOptions {
@@ -71,7 +71,7 @@ dependencies {
 
     implementation "com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1"
 
-    implementation "com.squareup.okhttp3:okhttp:3.12.1"
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
 
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0"
@@ -82,7 +82,7 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.6"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
 
-    implementation "com.google.code.gson:gson:2.8.5"
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     def koin_version = '2.0.1'
     implementation "org.koin:koin-android:$koin_version"
@@ -93,10 +93,14 @@ dependencies {
     implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
     implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
 
-    def retrofit_version = "2.3.0"
+    def retrofit_version = '2.6.2'
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+
+    def veil_version = "1.0.8"
+    implementation "com.github.skydoves:androidveil:$veil_version"
 
 }
 

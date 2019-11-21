@@ -4,7 +4,7 @@ import com.redbox.mirumon.main.domain.pojo.Software
 
 sealed class SoftwareState {
     object Initial : SoftwareState()
-    class Loading(val loading: Boolean) : SoftwareState()
+    object Loading : SoftwareState()
     class Success(val softList: ArrayList<Software>) : SoftwareState()
     object Error : SoftwareState()
 }

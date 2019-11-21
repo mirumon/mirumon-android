@@ -12,11 +12,12 @@ class SoftwareViewModel(private val repository: InfoRepository) : ViewModel() {
         state.value = SoftwareState.Initial
     }
 
-    fun getSoftware(loading: Boolean) {
-        state.postValue(SoftwareState.Loading(loading))
+    fun getSoftware() {
+        state.postValue(SoftwareState.Loading)
         repository.getSoftware({
             state.postValue(SoftwareState.Success(it))
         }, {
+            it.printStackTrace()
             state.postValue(SoftwareState.Error)
         })
     }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +18,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class SoftwareFragment : Fragment() {
 
     private val vm: SoftwareViewModel by viewModel()
+    private lateinit var adapter: SoftwareListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,49 +31,35 @@ class SoftwareFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        software_list_btn.setOnClickListener {
-            if (software_list_rv.visibility == View.GONE) {
-                software_list_rv.visibility = View.VISIBLE
-                software_list_btn.setCompoundDrawablesWithIntrinsicBounds(
-                    resources.getDrawable(
-                        R.drawable.ic_programs,
-                        context?.theme
-                    ), null, resources.getDrawable(
-                        R.drawable.ic_open,
-                        context?.theme
-                    ), null
-                )
-            } else {
-                software_list_rv.visibility = View.GONE
-                software_list_btn.setCompoundDrawablesWithIntrinsicBounds(
-                    resources.getDrawable(
-                        R.drawable.ic_programs,
-                        context?.theme
-                    ), null, resources.getDrawable(
-                        R.drawable.ic_close,
-                        context?.theme
-                    ), null
-                )
-            }
-        }
-
         software_list_rv.layoutManager = LinearLayoutManager(this.context)
+        adapter = SoftwareListAdapter()
 
         vm.state.observe(this, Observer {
             when (it) {
                 is SoftwareState.Initial -> {
-                    vm.getSoftware(true)
+                    vm.getSoftware()
                 }
                 is SoftwareState.Loading -> {
-                    applyLoadingState(software_list_rv, software_pv)
+                    rv_button.setActionListener { software_pv.isVisible = !software_pv.isVisible }
+                    applyLoadingState(software_list_rv)
                 }
                 is SoftwareState.Success -> {
                     applySuccessState(software_pv)
-                    software_list_rv.adapter = SoftwareListAdapter()
+                    adapter.softwareList = it.softList
+                    software_list_rv.adapter = adapter
+                    adapter.notifyDataSetChanged()
+                    software_list_rv.isVisible = rv_button.stateOpened
+                    rv_button.setActionListener {
+                        if (!software_list_rv.isVisible) {
+                            software_list_rv.visibility = View.VISIBLE
+                        } else {
+                            software_list_rv.visibility = View.GONE
+                        }
+                    }
                 }
                 is SoftwareState.Error -> {
                     Toast
-                        .makeText(this.context, getText(R.string.error_message), Toast.LENGTH_SHORT)
+                        .makeText(this.context, getText(R.string.error_message), Toast.LENGTH_LONG)
                         .show()
                 }
             }

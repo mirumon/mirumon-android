@@ -23,6 +23,6 @@
     <string name="os">OS</string>
     <string name="device_info">Device Info</string>
     <string name="feature_tba">This feature is under development</string>
-    <string name="error_message">An Error just occurred. Check your connection or ping your backend. Perhaps both.</string>
+    <string name="error_message">An Error just occurred. Check your connection or ping your backend.</string>
 
 </resources>

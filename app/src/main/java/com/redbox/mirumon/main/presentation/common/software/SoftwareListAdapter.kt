@@ -10,6 +10,7 @@ import com.redbox.mirumon.main.domain.pojo.Software
 import kotlinx.android.synthetic.main.software_list_item.view.*
 
 class SoftwareListAdapter : RecyclerView.Adapter<SoftwareListAdapter.SoftwareViewHolder>() {
+
     lateinit var softwareList: List<Software>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SoftwareViewHolder {
