@@ -30,6 +30,10 @@ class DeviceActivity : AppCompatActivity() {
             super.onBackPressed()
         }
 
+        device_common_btn.setOnClickListener {
+            startActivity(Intent(this.applicationContext, CommonInfoActivity::class.java))
+        }
+
         vm.state.observe(this, Observer {
             when (it) {
                 is DeviceState.Initial -> vm.getDeviceInfo()
@@ -60,8 +64,5 @@ class DeviceActivity : AppCompatActivity() {
             }
         })
 
-        device_common_btn.setOnClickListener {
-            startActivity(Intent(this.applicationContext, CommonInfoActivity::class.java))
-        }
     }
 }

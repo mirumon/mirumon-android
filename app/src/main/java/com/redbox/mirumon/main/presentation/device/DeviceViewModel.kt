@@ -9,7 +9,7 @@ class DeviceViewModel(private val repository: InfoRepository) : ViewModel() {
     val state = MutableLiveData<DeviceState>()
 
     init {
-        state.postValue(DeviceState.Initial)
+        state.value = DeviceState.Initial
     }
 
     fun getDeviceInfo() {

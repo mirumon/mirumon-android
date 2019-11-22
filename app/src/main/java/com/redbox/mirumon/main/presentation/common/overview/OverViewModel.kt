@@ -9,7 +9,7 @@ class OverViewModel(private val repository: InfoRepository) : ViewModel() {
     val state = MutableLiveData<OverViewState>()
 
     init {
-        state.value = OverViewState.Initial
+        state.value = OverViewState.Loading
     }
 
     fun getOS() {

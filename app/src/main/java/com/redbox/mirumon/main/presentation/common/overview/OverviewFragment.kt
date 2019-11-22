@@ -22,9 +22,13 @@ class OverviewFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        return inflater.inflate(R.layout.fragment_overview, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         vm.state.observe(this, Observer {
             when (it) {
-                is OverViewState.Initial -> {
+                is OverViewState.Loading -> {
                     vm.getOS()
                     applyTextLoadingState(
                         common_os_tv,
@@ -50,7 +54,5 @@ class OverviewFragment : Fragment() {
                 }
             }
         })
-
-        return inflater.inflate(R.layout.fragment_overview, container, false)
     }
 }
