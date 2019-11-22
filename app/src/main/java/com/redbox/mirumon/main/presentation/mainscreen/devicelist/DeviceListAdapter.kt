@@ -9,10 +9,10 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.redbox.mirumon.R
+import com.redbox.mirumon.main.domain.CommonRepository
 import com.redbox.mirumon.main.domain.pojo.DeviceListItem
 import com.redbox.mirumon.main.presentation.device.DeviceActivity
 import kotlinx.android.synthetic.main.device_list_item.view.*
@@ -45,9 +45,8 @@ class DeviceListAdapter(val listener: (mac: String) -> Unit) :
             indicatorIv.animation = anim
 
             layout.setOnClickListener {
-                context.startActivity(Intent(context, DeviceActivity::class.java).apply {
-                    putExtra("address", deviceList[position].macAddress)
-                })
+                CommonRepository.setAddress(deviceList[position].macAddress)
+                context.startActivity(Intent(context, DeviceActivity::class.java))
             }
 
             powerButton.setOnClickListener {

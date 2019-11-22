@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_device_list.*
 class DeviceListFragment : Fragment() {
 
     private lateinit var listViewModel: DeviceListViewModel
-    private lateinit var adapter : DeviceListAdapter
+    private lateinit var adapter: DeviceListAdapter
 
 
     override fun onCreateView(
@@ -49,7 +49,7 @@ class DeviceListFragment : Fragment() {
         device_list_rv.layoutManager = LinearLayoutManager(this.context)
     }
 
-    fun shutDown(macAdress : String){
+    fun shutDown(macAdress: String) {
         listViewModel.shutDown(macAdress)
     }
 }

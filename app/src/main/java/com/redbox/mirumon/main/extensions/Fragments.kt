@@ -1,6 +1,5 @@
 package com.redbox.mirumon.main.extensions
 
-import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ProgressBar
@@ -22,7 +21,6 @@ fun Fragment.applySuccessState(
 }
 
 fun Fragment.applyTextLoadingState(vararg textViews: TextView) {
-    Log.e("Loading", "Loading")
     val anim = AnimationUtils.loadAnimation(context, R.anim.blink)
     for (t in textViews) {
         t.animation = anim
@@ -30,11 +28,20 @@ fun Fragment.applyTextLoadingState(vararg textViews: TextView) {
 }
 
 fun Fragment.applyTextSuccessState(vararg textViews: TextView) {
-    Log.e("Loaded", "Loaded")
     for (t in textViews) {
         t.animation = null
     }
 
+}
+
+fun Fragment.applyErrorState() {
+    android.widget.Toast
+        .makeText(
+            context,
+            getText(com.redbox.mirumon.R.string.error_message),
+            android.widget.Toast.LENGTH_LONG
+        )
+        .show()
 }
 
 

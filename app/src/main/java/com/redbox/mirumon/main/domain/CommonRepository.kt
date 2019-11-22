@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.presentation.common
+package com.redbox.mirumon.main.domain
 
 object CommonRepository {
     private var address = String()
@@ -7,7 +7,7 @@ object CommonRepository {
         return address
     }
 
-    fun setAdress(address: String) {
+    fun setAddress(address: String) {
         this.address = address
     }
 }

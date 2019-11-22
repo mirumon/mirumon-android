@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.redbox.mirumon.R
+import com.redbox.mirumon.main.extensions.applyErrorState
 import com.redbox.mirumon.main.extensions.applyTextLoadingState
 import com.redbox.mirumon.main.extensions.applyTextSuccessState
 import kotlinx.android.synthetic.main.fragment_overview.*
@@ -47,9 +48,7 @@ class OverviewFragment : Fragment() {
                     common_version_tv.text = it.os.version
                 }
                 is OverViewState.Error -> {
-                    Toast
-                        .makeText(this.context, getText(R.string.error_message), Toast.LENGTH_LONG)
-                        .show()
+                    applyErrorState()
                 }
             }
         })

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.redbox.mirumon.R
+import com.redbox.mirumon.main.domain.CommonRepository
 import kotlinx.android.synthetic.main.activity_common.*
 
 class CommonInfoActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class CommonInfoActivity : AppCompatActivity() {
             )
         )
 
-        CommonRepository.setAdress(intent.getStringExtra("address"))
+        CommonRepository.setAddress(intent.getStringExtra("address"))
 
         common_vp.currentItem = 1
         common_tabs_tl.getTabAt(1)!!.select()
