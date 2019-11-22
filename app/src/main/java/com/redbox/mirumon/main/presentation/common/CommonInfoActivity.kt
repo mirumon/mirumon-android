@@ -2,7 +2,6 @@ package com.redbox.mirumon.main.presentation.common
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import com.google.android.material.tabs.TabLayout
 import com.redbox.mirumon.R
 import kotlinx.android.synthetic.main.activity_common.*
@@ -17,7 +16,6 @@ class CommonInfoActivity : AppCompatActivity() {
         common_tabs_tl.setupWithViewPager(common_vp)
         common_tabs_tl.getTabAt(0)?.setIcon(R.drawable.ic_info)
         common_tabs_tl.getTabAt(1)?.setIcon(R.drawable.ic_software)
-
 
         common_vp.currentItem = 1
         common_tabs_tl.getTabAt(1)!!.select()

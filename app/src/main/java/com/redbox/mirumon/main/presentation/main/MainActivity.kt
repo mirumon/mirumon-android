@@ -11,7 +11,6 @@ import com.redbox.mirumon.R
 import kotlinx.android.synthetic.main.activity_main.main_fragments_vp
 import kotlinx.android.synthetic.main.activity_main.main_tabs_tl
 
-
 class MainActivity : AppCompatActivity() {
 
     init {
