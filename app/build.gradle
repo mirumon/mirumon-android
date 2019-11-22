@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "APPCENTER_SECRET", '"e394c952-77cc-4f33-bfc0-dee0a1667bc6"'
+        buildConfigField "String", "APPCENTER", '"34dae18b-2008-4795-8ca0-568809d934bf"'
         buildConfigField "String", "BASE_URL", '"https://api.mirumon.dev"'
     }
 
@@ -98,9 +98,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
-
-    def veil_version = "1.0.8"
-    implementation "com.github.skydoves:androidveil:$veil_version"
 
 }
 

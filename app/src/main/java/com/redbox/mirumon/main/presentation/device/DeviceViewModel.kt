@@ -9,16 +9,15 @@ class DeviceViewModel(private val repository: InfoRepository) : ViewModel() {
     val state = MutableLiveData<DeviceState>()
 
     init {
-        state.postValue(DeviceState.InitialState)
+        state.postValue(DeviceState.Initial)
     }
 
     fun getDeviceInfo() {
-        state.postValue(DeviceState.LoadingState)
+        state.postValue(DeviceState.Loading)
         repository.getDeviceInfo({
-            state.postValue(DeviceState.SuccessState(it))
+            state.postValue(DeviceState.Success(it))
         }, {
             it.printStackTrace()
         })
     }
-
 }

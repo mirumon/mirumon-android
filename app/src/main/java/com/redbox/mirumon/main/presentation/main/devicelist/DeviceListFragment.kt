@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.presentation.mainscreen.devicelist
+package com.redbox.mirumon.main.presentation.main.devicelist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +14,6 @@ class DeviceListFragment : Fragment() {
 
     private lateinit var listViewModel: DeviceListViewModel
     private lateinit var adapter: DeviceListAdapter
-
 
     override fun onCreateView(
         inflater: LayoutInflater,

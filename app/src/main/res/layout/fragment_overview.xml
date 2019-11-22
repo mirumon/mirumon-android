@@ -50,8 +50,7 @@
         android:textColor="@color/colorMainFont"
         android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/common_os_tv"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="69dp" />
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
 
     <TextView

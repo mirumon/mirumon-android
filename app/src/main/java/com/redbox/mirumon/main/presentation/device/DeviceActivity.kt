@@ -4,13 +4,18 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-
 import com.redbox.mirumon.R
 import com.redbox.mirumon.main.extensions.applyErrorState
 import com.redbox.mirumon.main.extensions.applyTextLoadingState
 import com.redbox.mirumon.main.extensions.applyTextSuccessState
 import com.redbox.mirumon.main.presentation.common.CommonInfoActivity
-import kotlinx.android.synthetic.main.activity_device.*
+import com.redbox.mirumon.main.presentation.device.DeviceState.Error
+import kotlinx.android.synthetic.main.activity_device.device_back_btn
+import kotlinx.android.synthetic.main.activity_device.device_common_btn
+import kotlinx.android.synthetic.main.activity_device.device_domain_tv
+import kotlinx.android.synthetic.main.activity_device.device_name_tv
+import kotlinx.android.synthetic.main.activity_device.device_user_tv
+import kotlinx.android.synthetic.main.activity_device.device_workgroup_tv
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class DeviceActivity : AppCompatActivity() {
@@ -27,16 +32,16 @@ class DeviceActivity : AppCompatActivity() {
 
         vm.state.observe(this, Observer {
             when (it) {
-                is DeviceState.InitialState -> vm.getDeviceInfo()
-                is DeviceState.LoadingState -> applyTextLoadingState(
+                is DeviceState.Initial -> vm.getDeviceInfo()
+                is DeviceState.Loading -> this.applyTextLoadingState(
                     device_name_tv,
                     device_domain_tv,
                     device_workgroup_tv,
                     device_user_tv
                 )
 
-                is DeviceState.SuccessState -> {
-                    applyTextSuccessState(
+                is DeviceState.Success -> {
+                    this.applyTextSuccessState(
                         device_name_tv,
                         device_domain_tv,
                         device_workgroup_tv,
@@ -49,7 +54,7 @@ class DeviceActivity : AppCompatActivity() {
                     device_user_tv.text = it.device.user.name
                 }
 
-                is DeviceState.ErrorState -> {
+                is Error -> {
                     applyErrorState()
                 }
             }
@@ -57,7 +62,6 @@ class DeviceActivity : AppCompatActivity() {
 
         device_common_btn.setOnClickListener {
             startActivity(Intent(this.applicationContext, CommonInfoActivity::class.java))
-
         }
     }
 }

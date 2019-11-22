@@ -1,7 +1,8 @@
-package com.redbox.mirumon.main.presentation.mainscreen.devicelist
+package com.redbox.mirumon.main.presentation.main.devicelist
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.redbox.mirumon.R
-import com.redbox.mirumon.main.domain.CommonRepository
+import com.redbox.mirumon.main.domain.common.CommonRepository
 import com.redbox.mirumon.main.domain.pojo.DeviceListItem
 import com.redbox.mirumon.main.presentation.device.DeviceActivity
 import kotlinx.android.synthetic.main.device_list_item.view.*
@@ -46,6 +47,7 @@ class DeviceListAdapter(val listener: (mac: String) -> Unit) :
 
             layout.setOnClickListener {
                 CommonRepository.setAddress(deviceList[position].macAddress)
+                Log.e("MAC-click", deviceList[position].macAddress)
                 context.startActivity(Intent(context, DeviceActivity::class.java))
             }
 

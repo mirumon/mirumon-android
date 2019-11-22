@@ -20,5 +20,4 @@ class OverViewModel(private val repository: InfoRepository) : ViewModel() {
             state.postValue(OverViewState.Error)
         })
     }
-
 }

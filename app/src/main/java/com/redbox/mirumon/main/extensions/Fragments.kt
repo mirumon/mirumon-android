@@ -31,7 +31,6 @@ fun Fragment.applyTextSuccessState(vararg textViews: TextView) {
     for (t in textViews) {
         t.animation = null
     }
-
 }
 
 fun Fragment.applyErrorState() {
@@ -43,7 +42,3 @@ fun Fragment.applyErrorState() {
         )
         .show()
 }
-
-
-
-

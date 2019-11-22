@@ -1,6 +1,6 @@
 package com.redbox.mirumon.main.domain.info
 
-import com.redbox.mirumon.main.domain.CommonRepository
+import com.redbox.mirumon.main.domain.common.CommonRepository
 import com.redbox.mirumon.main.domain.pojo.DeviceInfo
 import com.redbox.mirumon.main.domain.pojo.Software
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -41,6 +41,4 @@ class InfoRepository(private val service: InfoService) {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(onSuccess, onError)
     }
-
-
 }

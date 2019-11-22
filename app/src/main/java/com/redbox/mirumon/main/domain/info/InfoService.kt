@@ -6,10 +6,9 @@ import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-
 interface InfoService {
     @GET("/computers/{mac-address}/details")
-    fun getDetails(@Path("mac-adress") id: String): Single<DeviceInfo>
+    fun getDetails(@Path("mac-address") id: String): Single<DeviceInfo>
 
     @GET("/computers/{mac-address}/installed-programs")
     fun getSoftware(@Path("mac-address") id: String): Single<ArrayList<Software>>

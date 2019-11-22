@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.presentation.mainscreen.grouplist
+package com.redbox.mirumon.main.presentation.main.grouplist
 
 import android.os.Bundle
 import android.view.LayoutInflater

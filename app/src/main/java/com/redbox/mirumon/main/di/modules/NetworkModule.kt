@@ -7,7 +7,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.concurrent.*
+import java.util.concurrent.TimeUnit.MINUTES
 
 val networkModule = module {
     single { RxJava2CallAdapterFactory.create() }
@@ -16,10 +16,11 @@ val networkModule = module {
 
         val interceptorLogger = HttpLoggingInterceptor()
         interceptorLogger.level = (HttpLoggingInterceptor.Level.BASIC)
+
         val client = OkHttpClient.Builder()
-            .connectTimeout(1, TimeUnit.MINUTES)
-            .writeTimeout(1, TimeUnit.MINUTES)
-            .readTimeout(1, TimeUnit.MINUTES)
+            .connectTimeout(1, MINUTES)
+            .writeTimeout(1, MINUTES)
+            .readTimeout(1, MINUTES)
             .addInterceptor(interceptorLogger)
             .build()
 

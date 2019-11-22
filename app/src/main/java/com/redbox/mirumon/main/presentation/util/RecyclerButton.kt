@@ -3,15 +3,16 @@ package com.redbox.mirumon.main.presentation.util
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.redbox.mirumon.R
-import kotlinx.android.synthetic.main.recycler_button.view.*
+import kotlinx.android.synthetic.main.recycler_button.view.btn_txt_tv
+import kotlinx.android.synthetic.main.recycler_button.view.icon_iv
+import kotlinx.android.synthetic.main.recycler_button.view.open_iv
 
-class RecyclerButton @JvmOverloads constructor(
+class RecyclerButton constructor(
     context: Context,
     attributeSet: AttributeSet
 ) : ConstraintLayout(context, attributeSet) {
@@ -47,7 +48,7 @@ class RecyclerButton @JvmOverloads constructor(
         setIcon(attributes.getDrawable(R.styleable.RecyclerButton_recyclerButtonIcon))
     }
 
-    private fun setButtonText(text: String) {
+    private fun setButtonText(text: String?) {
         buttonText?.text = text
     }
 
@@ -64,5 +65,4 @@ class RecyclerButton @JvmOverloads constructor(
             stateOpened = false
         }
     }
-
 }

@@ -16,7 +16,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name="com.redbox.mirumon.main.presentation.device.DeviceActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="com.redbox.mirumon.main.presentation.mainscreen.MainActivity">
+        <activity android:name="com.redbox.mirumon.main.presentation.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
