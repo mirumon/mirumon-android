@@ -8,7 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.redbox.mirumon.R
-import kotlinx.android.synthetic.main.fragment_device_list.*
+import kotlinx.android.synthetic.main.fragment_device_list.device_list_rv
+import kotlinx.android.synthetic.main.fragment_device_list.list_refresh
 
 class DeviceListFragment : Fragment() {
 
@@ -40,9 +41,8 @@ class DeviceListFragment : Fragment() {
         }
 
         listViewModel.observeDevices(this) {
-            adapter = DeviceListAdapter(listViewModel::shutDown)
-            adapter.deviceList = it
-            device_list_rv.adapter = adapter.apply { notifyDataSetChanged() }
+            adapter = DeviceListAdapter(listViewModel::shutDown, it)
+            device_list_rv.adapter = adapter
         }
 
         device_list_rv.layoutManager = LinearLayoutManager(this.context)

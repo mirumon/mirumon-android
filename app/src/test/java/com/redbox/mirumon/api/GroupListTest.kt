@@ -22,5 +22,4 @@ class GroupListTest {
     fun parseTest() {
         assertTrue(adapter.itemCount == 0)
     }
-
 }

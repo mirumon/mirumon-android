@@ -34,7 +34,6 @@ class SoftwareFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         software_list_rv.layoutManager = LinearLayoutManager(this.context)
-        adapter = SoftwareListAdapter()
 
         vm.state.observe(this, Observer {
             when (it) {
@@ -47,9 +46,8 @@ class SoftwareFragment : Fragment() {
                 }
                 is SoftwareState.Success -> {
                     applySuccessState(software_pv)
-                    adapter.softwareList = it.softList
+                    adapter = SoftwareListAdapter((it.softList))
                     software_list_rv.adapter = adapter
-                    adapter.notifyDataSetChanged()
                     software_list_rv.isVisible = rv_button.stateOpened
                     rv_button.setActionListener {
                         software_list_rv.isVisible = !software_list_rv.isVisible

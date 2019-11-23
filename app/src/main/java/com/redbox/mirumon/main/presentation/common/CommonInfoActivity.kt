@@ -23,8 +23,8 @@ class CommonInfoActivity : AppCompatActivity() {
         common_tabs_tl.getTabAt(1)?.select()
 
         common_tabs_tl.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabReselected(p0: TabLayout.Tab){}
-            override fun onTabUnselected(p0: TabLayout.Tab){}
+            override fun onTabReselected(p0: TabLayout.Tab) {}
+            override fun onTabUnselected(p0: TabLayout.Tab) {}
 
             override fun onTabSelected(p0: TabLayout.Tab) {
                 common_screen_tv.text = titles[p0.position]

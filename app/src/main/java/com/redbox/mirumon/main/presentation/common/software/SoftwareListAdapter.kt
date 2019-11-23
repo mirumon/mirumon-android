@@ -7,11 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.redbox.mirumon.R
 import com.redbox.mirumon.main.domain.pojo.Software
-import kotlinx.android.synthetic.main.software_list_item.view.*
+import kotlinx.android.synthetic.main.software_list_item.view.software_name_tv
+import kotlinx.android.synthetic.main.software_list_item.view.software_vendor_tv
+import kotlinx.android.synthetic.main.software_list_item.view.software_version_tv
 
-class SoftwareListAdapter : RecyclerView.Adapter<SoftwareListAdapter.SoftwareViewHolder>() {
-
-    lateinit var softwareList: List<Software>
+class SoftwareListAdapter(val softwareList: List<Software>) :
+    RecyclerView.Adapter<SoftwareListAdapter.SoftwareViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SoftwareViewHolder {
         return SoftwareViewHolder(

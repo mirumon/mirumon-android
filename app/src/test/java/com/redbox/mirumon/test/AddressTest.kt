@@ -10,7 +10,7 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class AddressTest {
 
-    lateinit var address : String
+    lateinit var address: String
 
     @Before
     fun setAddress() {
@@ -22,5 +22,4 @@ class AddressTest {
     fun parseTest() {
         assertTrue(address == CommonRepository.getAddress())
     }
-
 }

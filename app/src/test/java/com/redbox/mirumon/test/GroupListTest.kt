@@ -1,7 +1,6 @@
 package com.redbox.mirumon.test
 
-import com.redbox.mirumon.main.presentation.mainscreen.grouplist.GroupListAdapter
-
+import com.redbox.mirumon.main.presentation.main.grouplist.GroupListAdapter
 
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -12,7 +11,7 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class GroupListTest {
 
-    lateinit var adapter : GroupListAdapter
+    lateinit var adapter: GroupListAdapter
 
     @Before
     fun setAddress() {
@@ -23,5 +22,4 @@ class GroupListTest {
     fun parseTest() {
         assertTrue(adapter.itemCount == 0)
     }
-
 }

@@ -22,5 +22,4 @@ class AddressTest {
     fun parseTest() {
         assertTrue(address == CommonRepository.getAddress())
     }
-
 }
