@@ -8,7 +8,7 @@
     tools:context=".main.presentation.common.software.SoftwareFragment">
 
     <com.redbox.mirumon.main.presentation.util.RecyclerButton
-        android:id="@+id/rv_button"
+        android:id="@+id/common_software_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
@@ -27,7 +27,7 @@
         android:scrollbars="vertical"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_button">
+        app:layout_constraintTop_toBottomOf="@+id/common_software_btn">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -40,6 +40,6 @@
         android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_button" />
+        app:layout_constraintTop_toBottomOf="@id/common_software_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
