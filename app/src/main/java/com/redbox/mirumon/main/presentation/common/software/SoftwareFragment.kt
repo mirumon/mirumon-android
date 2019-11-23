@@ -12,7 +12,9 @@ import com.redbox.mirumon.R
 import com.redbox.mirumon.main.extensions.applyErrorState
 import com.redbox.mirumon.main.extensions.applyLoadingState
 import com.redbox.mirumon.main.extensions.applySuccessState
-import kotlinx.android.synthetic.main.fragment_software.*
+import kotlinx.android.synthetic.main.fragment_software.rv_button
+import kotlinx.android.synthetic.main.fragment_software.software_list_rv
+import kotlinx.android.synthetic.main.fragment_software.software_pv
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SoftwareFragment : Fragment() {
@@ -50,11 +52,7 @@ class SoftwareFragment : Fragment() {
                     adapter.notifyDataSetChanged()
                     software_list_rv.isVisible = rv_button.stateOpened
                     rv_button.setActionListener {
-                        if (!software_list_rv.isVisible) {
-                            software_list_rv.visibility = View.VISIBLE
-                        } else {
-                            software_list_rv.visibility = View.GONE
-                        }
+                        software_list_rv.isVisible = !software_list_rv.isVisible
                     }
                 }
                 is SoftwareState.Error -> {

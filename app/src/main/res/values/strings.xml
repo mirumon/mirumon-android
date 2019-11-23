@@ -24,7 +24,10 @@
     <string name="device_info">Device Info</string>
     <string name="feature_tba">This feature is under development</string>
     <string name="error_message">An Error just occurred. Check your connection or ping your backend.</string>
-    <string name="common_software">Software</string>
-    <string name="command_overview">Overview</string>
+
+    <string-array name="common_titles">
+        <item name="common_software">Software</item>
+        <item name="command_overview">Overview</item>
+    </string-array>
 
 </resources>
