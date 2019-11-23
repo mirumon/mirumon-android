@@ -20,6 +20,7 @@ class CommonInfoActivity : AppCompatActivity() {
         common_tabs_tl.getTabAt(1)?.setIcon(R.drawable.ic_software)
 
         common_vp.currentItem = 1
+        common_screen_tv.text = titles[1]
 
         common_tabs_tl.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab) {}

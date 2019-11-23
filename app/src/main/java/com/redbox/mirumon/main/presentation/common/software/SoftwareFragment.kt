@@ -12,7 +12,7 @@ import com.redbox.mirumon.R
 import com.redbox.mirumon.main.extensions.applyErrorState
 import com.redbox.mirumon.main.extensions.applyLoadingState
 import com.redbox.mirumon.main.extensions.applySuccessState
-import kotlinx.android.synthetic.main.fragment_software.rv_button
+import kotlinx.android.synthetic.main.fragment_software.software_btn
 import kotlinx.android.synthetic.main.fragment_software.software_list_rv
 import kotlinx.android.synthetic.main.fragment_software.software_pv
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -41,15 +41,17 @@ class SoftwareFragment : Fragment() {
                     vm.getSoftware()
                 }
                 is SoftwareState.Loading -> {
-                    rv_button.setActionListener { software_pv.isVisible = !software_pv.isVisible }
+                    software_btn.setActionListener {
+                        software_pv.isVisible = !software_pv.isVisible
+                    }
                     applyLoadingState(software_list_rv)
                 }
                 is SoftwareState.Success -> {
                     applySuccessState(software_pv)
                     adapter = SoftwareListAdapter((it.softList))
                     software_list_rv.adapter = adapter
-                    software_list_rv.isVisible = rv_button.stateOpened
-                    rv_button.setActionListener {
+                    software_list_rv.isVisible = software_btn.stateOpened
+                    software_btn.setActionListener {
                         software_list_rv.isVisible = !software_list_rv.isVisible
                     }
                 }
