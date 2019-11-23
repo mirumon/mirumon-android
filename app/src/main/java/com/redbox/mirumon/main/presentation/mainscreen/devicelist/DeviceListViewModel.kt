@@ -10,12 +10,12 @@ import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.redbox.mirumon.main.domain.DEVICE_LIST
-import com.redbox.mirumon.main.domain.SHUTDOWN
-import com.redbox.mirumon.main.domain.WebSocketModule
 import com.redbox.mirumon.main.domain.pojo.ApiMessage
 import com.redbox.mirumon.main.domain.pojo.DetailsRequest
 import com.redbox.mirumon.main.domain.pojo.DeviceListItem
+import com.redbox.mirumon.main.domain.websocket.DEVICE_LIST
+import com.redbox.mirumon.main.domain.websocket.SHUTDOWN
+import com.redbox.mirumon.main.domain.websocket.WebSocketModule
 import okhttp3.WebSocket
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
