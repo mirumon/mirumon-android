@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.presentation.mainscreen.devicelist
+package com.redbox.mirumon.main.presentation.main.devicelist
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle
@@ -10,9 +10,9 @@ import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.redbox.mirumon.main.domain.DEVICE_LIST
-import com.redbox.mirumon.main.domain.SHUTDOWN
-import com.redbox.mirumon.main.domain.WebSocketModule
+import com.redbox.mirumon.main.domain.websocket.DEVICE_LIST
+import com.redbox.mirumon.main.domain.websocket.SHUTDOWN
+import com.redbox.mirumon.main.domain.websocket.WebSocketModule
 import com.redbox.mirumon.main.domain.pojo.ApiMessage
 import com.redbox.mirumon.main.domain.pojo.DetailsRequest
 import com.redbox.mirumon.main.domain.pojo.DeviceListItem

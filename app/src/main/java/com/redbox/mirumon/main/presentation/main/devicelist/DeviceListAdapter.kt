@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.presentation.mainscreen.devicelist
+package com.redbox.mirumon.main.presentation.main.devicelist
 
 import android.content.Context
 import android.content.Intent
@@ -12,14 +12,18 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.redbox.mirumon.R
+import com.redbox.mirumon.main.domain.common.CommonRepository
 import com.redbox.mirumon.main.domain.pojo.DeviceListItem
 import com.redbox.mirumon.main.presentation.device.DeviceActivity
-import kotlinx.android.synthetic.main.device_list_item.view.*
+import kotlinx.android.synthetic.main.device_list_item.view.common_arch_tv
+import kotlinx.android.synthetic.main.device_list_item.view.common_os_tv
+import kotlinx.android.synthetic.main.device_list_item.view.device_foreground_cl
+import kotlinx.android.synthetic.main.device_list_item.view.device_indicator_iv
+import kotlinx.android.synthetic.main.device_list_item.view.device_name_tv
+import kotlinx.android.synthetic.main.device_list_item.view.device_power_btn
 
-class DeviceListAdapter(val listener: (mac: String) -> Unit) :
+class DeviceListAdapter(val listener: (mac: String) -> Unit, var deviceList: List<DeviceListItem>) :
     RecyclerView.Adapter<DeviceListAdapter.DeviceViewHolder>() {
-
-    lateinit var deviceList: List<DeviceListItem>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceViewHolder {
         return DeviceViewHolder(
@@ -44,9 +48,8 @@ class DeviceListAdapter(val listener: (mac: String) -> Unit) :
             indicatorIv.animation = anim
 
             layout.setOnClickListener {
-                context.startActivity(Intent(context, DeviceActivity::class.java).apply {
-                    putExtra("address", deviceList[position].macAddress)
-                })
+                CommonRepository.setAddress(deviceList[position].macAddress)
+                context.startActivity(Intent(context, DeviceActivity::class.java))
             }
 
             powerButton.setOnClickListener {

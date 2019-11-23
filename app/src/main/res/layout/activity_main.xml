@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.presentation.mainscreen.MainActivity">
+    tools:context=".main.presentation.main.MainActivity">
 
     <Toolbar
         android:id="@+id/toolbar"
@@ -60,16 +60,6 @@
         app:tabGravity="fill"
         app:tabSelectedTextColor="@color/colorSelection"
         app:tabTextColor="@color/colorMainFont">
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/groups_tab_text" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/devices_tab_text" />
 
     </com.google.android.material.tabs.TabLayout>
 

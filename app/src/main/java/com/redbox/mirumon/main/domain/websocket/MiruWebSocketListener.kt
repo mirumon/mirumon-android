@@ -1,4 +1,4 @@
-package com.redbox.mirumon.main.domain
+package com.redbox.mirumon.main.domain.websocket
 
 import okhttp3.Response
 import okhttp3.WebSocket

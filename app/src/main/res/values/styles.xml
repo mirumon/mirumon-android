@@ -7,6 +7,32 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:colorBackground">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+
+    <style name="AccentTextView">
+        <item name="android:textColor">@color/colorAccentFont</item>
+    </style>
+
+    <style name="RegularTextView">
+        <item name="android:textColor">@color/colorMainFont</item>
+    </style>
+
+    <style name="RegularButton">
+        <item name="android:background">@drawable/text_background</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_height">@dimen/field_height</item>
+        <item name="android:paddingStart">@dimen/dp_10</item>
+        <item name="android:paddingEnd">@dimen/dp_10</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:drawablePadding">@dimen/dp_10</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="CustomButtonTextView">
+        <item name="android:fontFamily">@font/lato_bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
     </style>
 
 </resources>

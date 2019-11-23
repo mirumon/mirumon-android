@@ -1,4 +1,4 @@
-package com.redbox.mirumon.test
+package com.redbox.mirumon.api
 
 import com.redbox.mirumon.main.presentation.main.grouplist.GroupListAdapter
 

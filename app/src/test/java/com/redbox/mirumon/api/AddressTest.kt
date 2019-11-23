@@ -1,6 +1,6 @@
-package com.redbox.mirumon.test
+package com.redbox.mirumon.api
 
-import com.redbox.mirumon.main.presentation.common.CommonRepository
+import com.redbox.mirumon.main.domain.common.CommonRepository
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
@@ -10,12 +10,12 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class AddressTest {
 
-    lateinit var address: String
+    private lateinit var address: String
 
     @Before
     fun setAddress() {
         address = "00-00-00-01-01-01"
-        CommonRepository.setAdress(address)
+        CommonRepository.setAddress(address)
     }
 
     @Test
