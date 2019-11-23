@@ -11,7 +11,7 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class GroupListTest {
 
-    lateinit var adapter: GroupListAdapter
+    private lateinit var adapter: GroupListAdapter
 
     @Before
     fun setAddress() {
