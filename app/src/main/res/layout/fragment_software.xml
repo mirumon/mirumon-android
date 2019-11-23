@@ -40,6 +40,6 @@
         android:visibility="invisible"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/common_software_btn" />
+        app:layout_constraintTop_toBottomOf="@id/rv_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
