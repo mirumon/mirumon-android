@@ -20,7 +20,6 @@ class CommonInfoActivity : AppCompatActivity() {
         common_tabs_tl.getTabAt(1)?.setIcon(R.drawable.ic_software)
 
         common_vp.currentItem = 1
-        common_tabs_tl.getTabAt(1)?.select()
 
         common_tabs_tl.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(p0: TabLayout.Tab) {}
