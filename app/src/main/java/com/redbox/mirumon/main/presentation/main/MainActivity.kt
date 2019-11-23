@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     init {
         AppCenter.start(
-            application, BuildConfig.APPCENTER,
+            application, BuildConfig.APPCENTER_SECRET,
             Analytics::class.java, Crashes::class.java
         )
     }

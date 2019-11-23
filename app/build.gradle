@@ -15,7 +15,7 @@ android {
         versionCode 1
         versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "APPCENTER", '"34dae18b-2008-4795-8ca0-568809d934bf"'
+        buildConfigField "String", "APPCENTER_SECRET", '"34dae18b-2008-4795-8ca0-568809d934bf"'
         buildConfigField "String", "BASE_URL", '"https://api.mirumon.dev"'
     }
 
