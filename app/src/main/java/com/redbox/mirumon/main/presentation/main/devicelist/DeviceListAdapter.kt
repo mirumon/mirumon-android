@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.device_list_item.view.device_indicator_iv
 import kotlinx.android.synthetic.main.device_list_item.view.device_name_tv
 import kotlinx.android.synthetic.main.device_list_item.view.device_power_btn
 
-class DeviceListAdapter(val listener: (mac: String) -> Unit, var deviceList: List<DeviceListItem>) :
+class DeviceListAdapter(val listener: (mac: String) -> Unit, var deviceList: ArrayList<DeviceListItem>) :
     RecyclerView.Adapter<DeviceListAdapter.DeviceViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceViewHolder {
