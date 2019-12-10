@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_device.device_back_btn
 import kotlinx.android.synthetic.main.activity_device.device_common_btn
 import kotlinx.android.synthetic.main.activity_device.device_domain_tv
 import kotlinx.android.synthetic.main.activity_device.device_name_tv
+import kotlinx.android.synthetic.main.activity_device.device_shutdown_btn
 import kotlinx.android.synthetic.main.activity_device.device_user_tv
 import kotlinx.android.synthetic.main.activity_device.device_workgroup_tv
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -63,5 +64,9 @@ class DeviceActivity : AppCompatActivity() {
                 }
             }
         })
+
+        device_shutdown_btn.setOnClickListener {
+            vm.shutdownPC()
+        }
     }
 }

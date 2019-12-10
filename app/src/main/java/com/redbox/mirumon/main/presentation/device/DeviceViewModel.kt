@@ -2,9 +2,9 @@ package com.redbox.mirumon.main.presentation.device
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.redbox.mirumon.main.domain.info.InfoRepository
+import com.redbox.mirumon.main.domain.info.DeviceRepository
 
-class DeviceViewModel(private val repository: InfoRepository) : ViewModel() {
+class DeviceViewModel(private val rep: DeviceRepository) : ViewModel() {
 
     val state = MutableLiveData<DeviceState>()
 
@@ -14,10 +14,18 @@ class DeviceViewModel(private val repository: InfoRepository) : ViewModel() {
 
     fun getDeviceInfo() {
         state.postValue(DeviceState.Loading)
-        repository.getDeviceInfo({
+        rep.getDeviceInfo({
             state.postValue(DeviceState.Success(it))
         }, {
             it.printStackTrace()
         })
+    }
+
+    fun shutdownPC(){
+        rep.shutdownPC()
+    }
+
+    fun executeСommand(){
+        rep.executeCommand()
     }
 }

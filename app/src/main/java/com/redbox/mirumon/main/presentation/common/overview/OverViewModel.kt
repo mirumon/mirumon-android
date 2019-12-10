@@ -2,9 +2,9 @@ package com.redbox.mirumon.main.presentation.common.overview
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.redbox.mirumon.main.domain.info.InfoRepository
+import com.redbox.mirumon.main.domain.info.DeviceRepository
 
-class OverViewModel(private val repository: InfoRepository) : ViewModel() {
+class OverViewModel(private val repository: DeviceRepository) : ViewModel() {
 
     val state = MutableLiveData<OverViewState>()
 

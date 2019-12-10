@@ -7,7 +7,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class InfoRepository(private val service: InfoService) {
+class DeviceRepository(private val service: DeviceService) {
 
     fun getSoftware(
         onSuccess: (ArrayList<Software>) -> Unit,
@@ -40,5 +40,13 @@ class InfoRepository(private val service: InfoService) {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(onSuccess, onError)
+    }
+
+    fun shutdownPC(){
+        service.shutdownPC(CommonRepository.getAddress())
+    }
+
+    fun executeCommand(){
+        service.executeCommand(CommonRepository.getAddress())
     }
 }
