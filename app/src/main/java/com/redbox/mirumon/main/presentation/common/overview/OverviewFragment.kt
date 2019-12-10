@@ -10,7 +10,10 @@ import com.redbox.mirumon.R
 import com.redbox.mirumon.main.extensions.applyErrorState
 import com.redbox.mirumon.main.extensions.applyTextLoadingState
 import com.redbox.mirumon.main.extensions.applyTextSuccessState
-import kotlinx.android.synthetic.main.fragment_overview.*
+import kotlinx.android.synthetic.main.fragment_overview.common_arch_tv
+import kotlinx.android.synthetic.main.fragment_overview.common_os_tv
+import kotlinx.android.synthetic.main.fragment_overview.common_serial_tv
+import kotlinx.android.synthetic.main.fragment_overview.common_version_tv
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class OverviewFragment : Fragment() {

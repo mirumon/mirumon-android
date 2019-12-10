@@ -1,6 +1,5 @@
 package com.redbox.mirumon.main.domain.websocket.dispatcher
 
-import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.redbox.mirumon.main.domain.pojo.ApiMessage

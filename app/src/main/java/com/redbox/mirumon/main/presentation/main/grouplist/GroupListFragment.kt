@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.redbox.mirumon.R
-import kotlinx.android.synthetic.main.fragment_group_list.*
+import kotlinx.android.synthetic.main.fragment_group_list.group_list_rv
 
 class GroupListFragment : Fragment() {
     override fun onCreateView(

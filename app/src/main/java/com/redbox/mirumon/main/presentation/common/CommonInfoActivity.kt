@@ -4,7 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayout
 import com.redbox.mirumon.R
-import kotlinx.android.synthetic.main.activity_common.*
+import kotlinx.android.synthetic.main.activity_common.common_back_btn
+import kotlinx.android.synthetic.main.activity_common.common_screen_tv
+import kotlinx.android.synthetic.main.activity_common.common_tabs_tl
+import kotlinx.android.synthetic.main.activity_common.common_vp
 
 class CommonInfoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,5 @@
 package com.redbox.mirumon.main.presentation.main.devicelist
 
-
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -27,7 +26,7 @@ class DeviceListViewModel : ViewModel(), LifecycleObserver {
     }
 
     fun shutDown(macAddress: String) {
-       WebSocketDispatcher.sendEvent(SHUTDOWN, DetailsRequest(macAddress))
+        WebSocketDispatcher.sendEvent(SHUTDOWN, DetailsRequest(macAddress))
     }
 
     fun observeDevices(
