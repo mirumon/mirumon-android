@@ -41,7 +41,9 @@ class SoftwareFragment : Fragment() {
                     vm.getSoftware()
                 }
                 is SoftwareState.Loading -> {
-                    common_software_btn.setActionListener { software_pv.isVisible = !software_pv.isVisible }
+                    common_software_btn.setActionListener {
+                        software_pv.isVisible = !software_pv.isVisible
+                    }
                     applyLoadingState(software_list_rv)
                 }
                 is SoftwareState.Success -> {

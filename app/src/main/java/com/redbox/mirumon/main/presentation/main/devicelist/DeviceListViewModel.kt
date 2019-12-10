@@ -1,6 +1,5 @@
 package com.redbox.mirumon.main.presentation.main.devicelist
 
-import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -8,38 +7,31 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ViewModel
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.redbox.mirumon.main.domain.websocket.DEVICE_LIST
-import com.redbox.mirumon.main.domain.websocket.SHUTDOWN
-import com.redbox.mirumon.main.domain.websocket.WebSocketModule
-import com.redbox.mirumon.main.domain.pojo.ApiMessage
 import com.redbox.mirumon.main.domain.pojo.DetailsRequest
 import com.redbox.mirumon.main.domain.pojo.DeviceListItem
-import okhttp3.WebSocket
+import com.redbox.mirumon.main.domain.websocket.DEVICE_LIST
+import com.redbox.mirumon.main.domain.websocket.SHUTDOWN
+import com.redbox.mirumon.main.domain.websocket.dispatcher.WebSocketDispatcher
+import com.redbox.mirumon.main.domain.websocket.events.DeviceListEvent
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 class DeviceListViewModel : ViewModel(), LifecycleObserver {
 
-    private val deviceList = MutableLiveData<List<DeviceListItem>>()
-    private val webSocket: WebSocket = WebSocketModule.miruWebSocket
+    private val deviceList = MutableLiveData<ArrayList<DeviceListItem>>()
 
     fun getDevices() {
-        val request = ApiMessage(DEVICE_LIST, null)
-        webSocket.send(Gson().toJson(request))
+        WebSocketDispatcher.sendEvent(DEVICE_LIST, null)
     }
 
-    fun shutDown(macAdress: String) {
-        val request = ApiMessage(SHUTDOWN, DetailsRequest(macAdress))
-        Log.e("SHUT", request.toString())
-        webSocket.send(Gson().toJson(request))
+    fun shutDown(macAddress: String) {
+        WebSocketDispatcher.sendEvent(SHUTDOWN, DetailsRequest(macAddress))
     }
 
     fun observeDevices(
         lifecycleOwner: LifecycleOwner,
-        callbackList: (List<DeviceListItem>) -> Unit
+        callbackList: (ArrayList<DeviceListItem>) -> Unit
     ) =
         deviceList.observe(
             lifecycleOwner,
@@ -47,15 +39,8 @@ class DeviceListViewModel : ViewModel(), LifecycleObserver {
         )
 
     @Subscribe(threadMode = ThreadMode.ASYNC)
-    fun onRecieve(response: String) {
-        Log.d("T", response)
-        val type = object : TypeToken<ApiMessage<List<DeviceListItem>>>() {}.type
-        deviceList.postValue(
-            Gson().fromJson<ApiMessage<List<DeviceListItem>>>(
-                response,
-                type
-            ).payload
-        )
+    fun onRecieve(response: DeviceListEvent) {
+        deviceList.postValue(response.list)
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
