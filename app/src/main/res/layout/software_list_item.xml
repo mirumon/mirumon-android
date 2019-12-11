@@ -13,23 +13,23 @@
         android:id="@+id/name_label_tv"
         android:layout_marginTop="@dimen/dp_5"
         android:text="@string/name"
-        style="@style/softwareLabelItem"
+        style="@style/infoLabel"
+        android:layout_marginStart="0dp"
         app:layout_constraintLeft_toLeftOf="@id/software_name_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/software_name_tv"
-        android:layout_marginStart="@dimen/dp_10"
         android:layout_marginEnd="@dimen/dp_5"
         android:paddingBottom="@dimen/dp_5"
-        style="@style/softwareInfoItem"
+        style="@style/softwareInfoTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_label_tv" />
 
 
     <View
         android:id="@+id/divider2"
-        style="@style/softwareListDivider"
+        style="@style/softwareDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/software_name_tv" />
@@ -39,21 +39,21 @@
         android:id="@+id/vendor_label_tv"
         android:layout_marginTop="@dimen/dp_5"
         android:text="@string/vendor"
-        style="@style/softwareLabelItem"
+        style="@style/infoLabel"
+        android:layout_marginStart="0dp"
         app:layout_constraintLeft_toLeftOf="@id/software_name_tv"
         app:layout_constraintTop_toTopOf="@id/divider2" />
 
     <TextView
         android:id="@+id/software_vendor_tv"
-        android:layout_marginStart="@dimen/dp_10"
         android:paddingBottom="@dimen/dp_5"
-        style="@style/softwareInfoItem"
+        style="@style/softwareInfoTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vendor_label_tv" />
 
     <View
         android:id="@+id/divider"
-        style="@style/softwareListDivider"
+        style="@style/softwareDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/version_label_tv"
@@ -62,14 +62,15 @@
     <TextView
         android:id="@+id/version_label_tv"
         android:text="@string/version"
-        style="@style/softwareLabelItem"
+        style="@style/infoLabel"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
         app:layout_constraintLeft_toLeftOf="@id/software_name_tv"
         app:layout_constraintTop_toTopOf="@id/divider" />
 
     <TextView
         android:id="@+id/software_version_tv"
-        android:layout_marginStart="@dimen/dp_10"
-        style="@style/softwareInfoItem"
+        style="@style/softwareInfoTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/version_label_tv" />
 

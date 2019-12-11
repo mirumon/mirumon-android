@@ -20,21 +20,15 @@
 
     <ImageButton
         android:id="@+id/device_back_btn"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="@dimen/dp_15"
-        android:background="@color/colorPrimaryDark"
-        android:src="@drawable/ic_arrow_back"
         app:layout_constraintBottom_toBottomOf="@id/device_toolbar"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@id/device_toolbar" />
+        app:layout_constraintTop_toTopOf="@id/device_toolbar"
+        style="@style/backImageButton" />
 
     <TextView
-        style="@style/RegularTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/infoLabel"
         android:layout_marginStart="@dimen/dp_10"
-        android:fontFamily="@font/lato_bold"
+        android:layout_marginTop="0dp"
         android:text="@string/device_info"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/device_toolbar"
@@ -63,47 +57,41 @@
 
     <TextView
         android:id="@+id/name_label_tv"
-        style="@style/RegularTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/infoLabel"
         android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/dp_10"
         android:text="@string/PC_name"
-        android:textSize="12sp"
         app:layout_constraintLeft_toRightOf="@id/device_icon_iv"
         app:layout_constraintTop_toTopOf="@id/device_icon_iv" />
 
     <TextView
         android:id="@+id/device_name_tv"
         android:layout_width="0dp"
-        style="@style/activityDeviceInfo"
+        android:paddingEnd="0dp"
+        style="@style/infoTextView"
         app:layout_constraintLeft_toLeftOf="@id/name_label_tv"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_label_tv" />
 
     <TextView
         android:id="@+id/domain_label_tv"
-        android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/domain"
-        style="@style/activityDeviceLabel"
+        style="@style/infoLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_icon_iv" />
 
     <TextView
         android:id="@+id/device_domain_tv"
-        android:layout_width="match_parent"
         android:layout_marginStart="@dimen/dp_15"
-        style="@style/activityDeviceInfo"
+        style="@style/infoTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/domain_label_tv" />
 
 
     <TextView
         android:id="@+id/workgroup_label_tv"
-        style="@style/activityDeviceLabel"
-        android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginTop="@dimen/dp_5"
+        style="@style/infoLabel"
         android:text="@string/workgroup"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_domain_tv" />
@@ -111,18 +99,15 @@
 
     <TextView
         android:id="@+id/device_workgroup_tv"
-        android:layout_width="match_parent"
         android:layout_marginStart="@dimen/dp_15"
-        style="@style/activityDeviceInfo"
+        style="@style/infoTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workgroup_label_tv" />
 
 
     <TextView
         android:id="@+id/user_label_tv"
-        style="@style/activityDeviceLabel"
-        android:layout_marginStart="@dimen/dp_20"
-        android:layout_marginTop="@dimen/dp_5"
+        style="@style/infoLabel"
         android:text="@string/current_user"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_workgroup_tv" />
@@ -130,9 +115,8 @@
 
     <TextView
         android:id="@+id/device_user_tv"
-        android:layout_width="match_parent"
         android:layout_marginStart="@dimen/dp_15"
-        style="@style/activityDeviceInfo"
+        style="@style/infoTextView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_label_tv" />
 

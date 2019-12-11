@@ -10,21 +10,21 @@
         android:id="@+id/os_label_tv"
         android:layout_marginTop="@dimen/dp_10"
         android:text="@string/os"
-        style="@style/overviewFragmentLabel"
+        style="@style/infoLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/common_os_tv"
-        style="@style/overviewFragmentInfo"
+        style="@style/infoTextView"
+        android:layout_marginStart="@dimen/dp_15"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/os_label_tv" />
 
 
     <TextView
         android:id="@+id/version_label_tv"
-        style="@style/overviewFragmentLabel"
-        android:layout_marginTop="@dimen/dp_5"
+        style="@style/infoLabel"
         android:text="@string/os_version"
         app:layout_constraintTop_toBottomOf="@id/common_os_tv"
         app:layout_constraintLeft_toLeftOf="parent"/>
@@ -32,15 +32,15 @@
 
     <TextView
         android:id="@+id/common_version_tv"
-        style="@style/overviewFragmentInfo"
+        style="@style/infoTextView"
+        android:layout_marginStart="@dimen/dp_15"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/version_label_tv" />
 
 
     <TextView
         android:id="@+id/arch_label_tv"
-        android:layout_marginTop="@dimen/dp_5"
-        style="@style/overviewFragmentLabel"
+        style="@style/infoLabel"
         android:text="@string/architecture"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/common_version_tv" />
@@ -48,14 +48,14 @@
 
     <TextView
         android:id="@+id/common_arch_tv"
-        style="@style/overviewFragmentInfo"
+        style="@style/infoTextView"
+        android:layout_marginStart="@dimen/dp_15"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/arch_label_tv" />
 
     <TextView
         android:id="@+id/serial_label_tv"
-        style="@style/overviewFragmentLabel"
-        android:layout_marginTop="@dimen/dp_5"
+        style="@style/infoLabel"
         android:text="@string/os_serial_number"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/common_arch_tv" />
@@ -63,7 +63,8 @@
 
     <TextView
         android:id="@+id/common_serial_tv"
-        style="@style/overviewFragmentInfo"
+        style="@style/infoTextView"
+        android:layout_marginStart="@dimen/dp_15"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/serial_label_tv" />
 

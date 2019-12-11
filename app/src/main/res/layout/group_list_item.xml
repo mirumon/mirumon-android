@@ -75,7 +75,7 @@
 
         <TextView
             android:id="@+id/item_online_tv"
-            style="@style/groupInfoItem"
+            style="@style/groupInfoTextView"
             android:text="15"
             app:layout_constraintBottom_toBottomOf="@id/item_online_iv"
             app:layout_constraintRight_toLeftOf="@id/item_offline_iv"
@@ -91,7 +91,7 @@
 
         <TextView
             android:id="@+id/item_offline_tv"
-            style="@style/groupInfoItem"
+            style="@style/groupInfoTextView"
             android:text="1"
             app:layout_constraintBottom_toBottomOf="@id/item_offline_iv"
             app:layout_constraintRight_toRightOf="parent"

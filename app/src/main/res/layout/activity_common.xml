@@ -17,22 +17,16 @@
 
     <ImageButton
         android:id="@+id/common_back_btn"
-        android:layout_width="@dimen/image_button_aspect"
-        android:layout_height="@dimen/image_button_aspect"
-        android:layout_marginStart="@dimen/dp_15"
-        android:background="@color/colorPrimaryDark"
-        android:src="@drawable/ic_arrow_back"
+        style="@style/backImageButton"
         app:layout_constraintBottom_toBottomOf="@id/common_toolbar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="@id/common_toolbar" />
 
     <TextView
         android:id="@+id/common_screen_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/infoLabel"
         android:layout_marginStart="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
-        android:textColor="@color/colorMainFont"
+        android:layout_marginTop="0dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/common_toolbar"
         app:layout_constraintLeft_toRightOf="@id/common_back_btn"
