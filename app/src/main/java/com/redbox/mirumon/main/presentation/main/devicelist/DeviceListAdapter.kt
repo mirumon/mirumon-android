@@ -57,6 +57,7 @@ class DeviceListAdapter(
 
             powerButton.setOnClickListener {
                 listener(deviceList[position].macAddress)
+
                 notifyItemRemoved(position)
             }
         }

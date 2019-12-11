@@ -43,12 +43,9 @@ class DeviceListFragment : Fragment() {
         listViewModel.observeDevices(this) {
             adapter = DeviceListAdapter(listViewModel::shutDown, it)
             device_list_rv.adapter = adapter
+            adapter.notifyDataSetChanged()
         }
 
         device_list_rv.layoutManager = LinearLayoutManager(this.context)
-    }
-
-    fun shutDown(macAdress: String) {
-        listViewModel.shutDown(macAdress)
     }
 }

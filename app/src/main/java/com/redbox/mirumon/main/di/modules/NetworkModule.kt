@@ -15,7 +15,7 @@ val networkModule = module {
     single {
 
         val interceptorLogger = HttpLoggingInterceptor()
-        interceptorLogger.level = (HttpLoggingInterceptor.Level.BASIC)
+        interceptorLogger.level = (HttpLoggingInterceptor.Level.BODY)
 
         val client = OkHttpClient.Builder()
             .connectTimeout(1, MINUTES)

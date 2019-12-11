@@ -10,4 +10,5 @@
     <color name="colorOffline">#DB5D5D</color>
     <color name="colorPowerButton">#95DB5D5D</color>
     <color name="colorShadowGradient">#000B50D4</color>
+    <color name="colorDialogBackground">#FFFFFF</color>
 </resources>

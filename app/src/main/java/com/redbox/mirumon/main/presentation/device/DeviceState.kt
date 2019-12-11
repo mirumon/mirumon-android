@@ -6,5 +6,6 @@ sealed class DeviceState {
     object Initial : DeviceState()
     object Loading : DeviceState()
     class Success(val device: DeviceInfo) : DeviceState()
+    object ShuttingDown : DeviceState()
     object Error : DeviceState()
 }

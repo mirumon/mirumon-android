@@ -3,6 +3,7 @@ package com.redbox.mirumon.main.presentation.device
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.redbox.mirumon.main.domain.info.DeviceRepository
+import com.redbox.mirumon.main.domain.pojo.Command
 
 class DeviceViewModel(private val rep: DeviceRepository) : ViewModel() {
 
@@ -21,11 +22,11 @@ class DeviceViewModel(private val rep: DeviceRepository) : ViewModel() {
         })
     }
 
-    fun shutdownPC(){
-        rep.shutdownPC()
+    fun shutdownPC() {
+        rep.shutdownPC({ state.postValue(DeviceState.ShuttingDown) }, {})
     }
 
-    fun executeСommand(){
-        rep.executeCommand()
+    fun executeСommand(command: String) {
+        rep.executeCommand(Command(command), {}, {})
     }
 }
