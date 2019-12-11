@@ -67,9 +67,7 @@
 
         <ImageView
             android:id="@+id/item_online_iv"
-            android:layout_width="@dimen/dp_group_indicator_aspect"
-            android:layout_height="@dimen/dp_group_indicator_aspect"
-            android:layout_marginEnd="@dimen/dp_5"
+            style="@style/groupColorIndicator"
             app:layout_constraintBottom_toBottomOf="@id/item_name_tv"
             app:layout_constraintRight_toLeftOf="@id/item_online_tv"
             app:layout_constraintTop_toTopOf="@id/item_name_tv"
@@ -77,21 +75,15 @@
 
         <TextView
             android:id="@+id/item_online_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:fontFamily="@font/lato_bold"
+            style="@style/groupInfoItem"
             android:text="15"
-            android:textColor="@color/colorAccentFont"
             app:layout_constraintBottom_toBottomOf="@id/item_online_iv"
             app:layout_constraintRight_toLeftOf="@id/item_offline_iv"
             app:layout_constraintTop_toTopOf="@id/item_online_iv" />
 
         <ImageView
             android:id="@+id/item_offline_iv"
-            android:layout_width="@dimen/dp_group_indicator_aspect"
-            android:layout_height="@dimen/dp_group_indicator_aspect"
-            android:layout_marginEnd="@dimen/dp_5"
+            style="@style/groupColorIndicator"
             app:layout_constraintBottom_toBottomOf="@id/item_name_tv"
             app:layout_constraintRight_toLeftOf="@id/item_offline_tv"
             app:layout_constraintTop_toTopOf="@id/item_name_tv"
@@ -99,12 +91,8 @@
 
         <TextView
             android:id="@+id/item_offline_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dp_10"
-            android:fontFamily="@font/lato_bold"
+            style="@style/groupInfoItem"
             android:text="1"
-            android:textColor="@color/colorAccentFont"
             app:layout_constraintBottom_toBottomOf="@id/item_offline_iv"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/item_offline_iv" />

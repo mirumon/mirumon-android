@@ -8,130 +8,62 @@
 
     <TextView
         android:id="@+id/os_label_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/os"
-        android:textColor="@color/colorMainFont"
-        android:textSize="12sp"
+        style="@style/overviewFragmentLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/common_os_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
-        android:padding="@dimen/dp_5"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="@dimen/dp_10"
-        android:textColor="@color/colorAccentFont"
-        android:textSize="14sp"
+        style="@style/overviewFragmentInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/os_label_tv" />
 
 
     <TextView
         android:id="@+id/version_label_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_20"
+        style="@style/overviewFragmentLabel"
         android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/os_version"
-        android:textColor="@color/colorMainFont"
-        android:textSize="12sp"
         app:layout_constraintTop_toBottomOf="@id/common_os_tv"
         app:layout_constraintLeft_toLeftOf="parent"/>
 
 
     <TextView
         android:id="@+id/common_version_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
-        android:padding="@dimen/dp_5"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
-        android:textSize="14sp"
+        style="@style/overviewFragmentInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/version_label_tv" />
 
 
     <TextView
         android:id="@+id/arch_label_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
+        style="@style/overviewFragmentLabel"
         android:text="@string/architecture"
-        android:textColor="@color/colorMainFont"
-        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/common_version_tv" />
 
 
     <TextView
         android:id="@+id/common_arch_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
-        android:padding="@dimen/dp_5"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
-        android:textSize="14sp"
+        style="@style/overviewFragmentInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/arch_label_tv" />
 
     <TextView
         android:id="@+id/serial_label_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_20"
+        style="@style/overviewFragmentLabel"
         android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:fontFamily="@font/lato_bold"
         android:text="@string/os_serial_number"
-        android:textColor="@color/colorMainFont"
-        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/common_arch_tv" />
 
 
     <TextView
         android:id="@+id/common_serial_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:fontFamily="@font/lato_bold"
-        android:padding="5dp"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textColor="@color/colorAccentFont"
-        android:textSize="14sp"
+        style="@style/overviewFragmentInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/serial_label_tv" />
 

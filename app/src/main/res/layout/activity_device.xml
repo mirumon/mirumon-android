@@ -75,109 +75,64 @@
 
     <TextView
         android:id="@+id/device_name_tv"
-        style="@style/AccentTextView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:padding="5dp"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textSize="14sp"
+        style="@style/activityDeviceInfo"
         app:layout_constraintLeft_toLeftOf="@id/name_label_tv"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name_label_tv" />
 
     <TextView
         android:id="@+id/domain_label_tv"
-        style="@style/RegularTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_10"
-
-        android:layout_marginEnd="@dimen/dp_15"
         android:text="@string/domain"
-        android:textSize="12sp"
+        style="@style/activityDeviceLabel"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_icon_iv" />
 
     <TextView
         android:id="@+id/device_domain_tv"
-        style="@style/AccentTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:padding="5dp"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textSize="14sp"
+        style="@style/activityDeviceInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/domain_label_tv" />
 
 
     <TextView
         android:id="@+id/workgroup_label_tv"
-        style="@style/RegularTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/activityDeviceLabel"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
         android:text="@string/workgroup"
-        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_domain_tv" />
 
 
     <TextView
         android:id="@+id/device_workgroup_tv"
-        style="@style/AccentTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:padding="5dp"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textSize="14sp"
+        style="@style/activityDeviceInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/workgroup_label_tv" />
 
 
     <TextView
         android:id="@+id/user_label_tv"
-        style="@style/RegularTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/activityDeviceLabel"
         android:layout_marginStart="@dimen/dp_20"
         android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
         android:text="@string/current_user"
-        android:textSize="12sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/device_workgroup_tv" />
 
 
     <TextView
         android:id="@+id/device_user_tv"
-        style="@style/AccentTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
-        android:layout_marginTop="@dimen/dp_5"
-        android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/text_background"
-        android:padding="5dp"
-        android:paddingStart="@dimen/dp_10"
-        android:paddingEnd="0dp"
-        android:textSize="14sp"
+        style="@style/activityDeviceInfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_label_tv" />
 

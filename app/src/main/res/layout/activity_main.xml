@@ -28,10 +28,7 @@
         app:layout_constraintTop_toTopOf="@id/toolbar" />
 
     <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dp_20"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        style="@style/activityMainImageButton"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
         app:layout_constraintRight_toLeftOf="@id/main_account_ib"
         app:layout_constraintTop_toTopOf="@id/toolbar"
@@ -39,10 +36,7 @@
 
     <ImageButton
         android:id="@+id/main_account_ib"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/dp_20"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        style="@style/activityMainImageButton"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintRight_toRightOf="@id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
