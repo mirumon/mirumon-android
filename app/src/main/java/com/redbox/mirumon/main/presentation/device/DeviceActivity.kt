@@ -82,13 +82,9 @@ class DeviceActivity : AppCompatActivity() {
             device_exec_et.isVisible = !device_exec_et.isVisible
         }
 
-        device_exec_et.setOnEditorActionListener { textView: TextView, _: Int, _: KeyEvent? ->
+        device_exec_et.setOnEditorActionListener { _: TextView, _: Int, _: KeyEvent? ->
             vm.executeСommand(device_exec_et.text.toString())
             return@setOnEditorActionListener true
         }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
     }
 }
