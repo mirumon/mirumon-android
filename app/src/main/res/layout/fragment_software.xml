@@ -7,17 +7,17 @@
     android:isScrollContainer="true"
     tools:context=".main.presentation.common.software.SoftwareFragment">
 
-    <com.redbox.mirumon.main.presentation.util.RecyclerButton
+    <com.redbox.mirumon.main.presentation.util.RevealButton
         android:id="@+id/common_software_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_15"
         android:layout_marginTop="@dimen/dp_15"
         android:layout_marginEnd="@dimen/dp_15"
-        android:background="@drawable/button_background"
+        android:background="@drawable/standard_background"
         app:layout_constraintTop_toTopOf="parent"
-        app:recyclerButtonIcon="@drawable/ic_programs"
-        app:recyclerButtonText="@string/programs" />
+        app:revealButtonIcon="@drawable/ic_programs"
+        app:revealButtonText="@string/programs" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/software_list_rv"

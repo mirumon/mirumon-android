@@ -8,11 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.redbox.mirumon.R
-import kotlinx.android.synthetic.main.recycler_button.view.btn_txt_tv
-import kotlinx.android.synthetic.main.recycler_button.view.icon_iv
-import kotlinx.android.synthetic.main.recycler_button.view.open_iv
+import kotlinx.android.synthetic.main.reveal_button.view.btn_txt_tv
+import kotlinx.android.synthetic.main.reveal_button.view.icon_iv
+import kotlinx.android.synthetic.main.reveal_button.view.open_iv
 
-class RecyclerButton constructor(
+class RevealButton constructor(
     context: Context,
     attributeSet: AttributeSet
 ) : ConstraintLayout(context, attributeSet) {
@@ -24,7 +24,7 @@ class RecyclerButton constructor(
     init {
         val inflater =
             getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        inflater.inflate(R.layout.recycler_button, this)
+        inflater.inflate(R.layout.reveal_button, this)
         buttonIcon = icon_iv
         buttonText = btn_txt_tv
         setAttrs(attributeSet)
@@ -40,12 +40,12 @@ class RecyclerButton constructor(
     private fun setAttrs(attributeSet: AttributeSet?) {
         val attributes = context.obtainStyledAttributes(
             attributeSet,
-            R.styleable.RecyclerButton,
+            R.styleable.RevealButton,
             0,
             0
         )
-        setButtonText(attributes.getString(R.styleable.RecyclerButton_recyclerButtonText))
-        setIcon(attributes.getDrawable(R.styleable.RecyclerButton_recyclerButtonIcon))
+        setButtonText(attributes.getString(R.styleable.RevealButton_revealButtonText))
+        setIcon(attributes.getDrawable(R.styleable.RevealButton_revealButtonIcon))
     }
 
     private fun setButtonText(text: String?) {

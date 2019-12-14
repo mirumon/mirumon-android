@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Mirumon</string>
-    <string name="groups_tab_text">My Groups</string>
-    <string name="devices_tab_text">Devices</string>
     <string name="add_group_button_text">Create a group</string>
     <string name="delimeter">::</string>
     <string name="text_placeholder">text</string>
@@ -24,7 +22,12 @@
     <string name="device_info">Device Info</string>
     <string name="feature_tba">This feature is under development</string>
     <string name="error_message">An Error just occurred. Check your connection or ping your backend.</string>
-
+    <string name="confirm_dialog_message">Shutdown the selected PC(s)?</string>
+    <string name="offline_message">This PC is not online</string>
+    <string name="confirm_ok">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="execute">run command</string>
+    <string name="execute_hint">explorer, notepad, etc…</string>
     <string-array name="common_titles">
         <item name="command_overview">Overview</item>
         <item name="common_software">Software</item>
