@@ -29,7 +29,7 @@
 
     <View
         android:id="@+id/divider2"
-        style="@style/softwareDivider"
+        style="@style/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/software_name_tv" />
@@ -53,7 +53,7 @@
 
     <View
         android:id="@+id/divider"
-        style="@style/softwareDivider"
+        style="@style/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/version_label_tv"
