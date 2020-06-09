@@ -1,109 +1,37 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'jacoco-android'
-
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
     defaultConfig {
-        applicationId "com.redbox.mirumon"
-        minSdkVersion 22
-        targetSdkVersion 28
+        applicationId "com.mirumon"
+        minSdkVersion 23
+        targetSdkVersion 29
         versionCode 1
-        versionName "0.1"
+        versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "APPCENTER_SECRET", '"34dae18b-2008-4795-8ca0-568809d934bf"'
-        buildConfigField "String", "BASE_URL", '"https://api.mirumon.dev"'
-    }
-
-    lintOptions {
-        quiet false
-
-    }
-
-    signingConfigs {
-        release {
-            storePassword 'mirumon'
-            keyAlias = 'mirukey'
-            keyPassword 'mirumon'
-            storeFile file('/home/aredruss/keystore/uplod-miru.jks')
-        }
-        release
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
-
-    def isRunningOnTravis = System.getenv("CI") == "true"
-
-    if (isRunningOnTravis) {
-        // configure keystore
-        signingConfigs.release.storeFile = file("../mirumon.keystore")
-        signingConfigs.release.storePassword = System.getenv("keystore_password")
-        signingConfigs.release.keyAlias = System.getenv("keystore_alias")
-        signingConfigs.release.keyPassword = System.getenv("keystore_alias_password")
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:1.1.0"
-    implementation "androidx.core:core-ktx:1.1.0"
-
-    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
-    implementation "com.android.support:recyclerview-v7:28.0.0"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation "junit:junit:4.12"
-    androidTestImplementation "androidx.test:runner:1.2.0"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
-
-    implementation "com.google.android.material:material:1.0.0"
-
-    implementation "com.chauthai.swipereveallayout:swipe-reveal-layout:1.4.1"
-
-    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
-
-    implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0"
-
-    def eventBusVersion = '3.1.1'
-    implementation "org.greenrobot:eventbus:${eventBusVersion}"
-
-    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
-    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
-
-    implementation 'com.google.code.gson:gson:2.8.6'
-
-    def koin_version = '2.0.1'
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-android-scope:$koin_version"
-    implementation "org.koin:koin-android-viewmodel:$koin_version"
-
-    def appCenterSdkVersion = '2.5.0'
-    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
-    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
-
-    def retrofit_version = '2.7.0'
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.2'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }
-
-
